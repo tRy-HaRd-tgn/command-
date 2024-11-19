@@ -1,0 +1,96 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 99.5%;
+  border: 3px orange solid;
+  border-radius: 10px;
+}
+.form_p {
+  margin-bottom: 3%;
+  font-size: 325%;
+  margin-top: 8%;
+  font-family: "Istok Web", serif;
+  font-weight: 700;
+}
+.form_input {
+  padding-left: 2%;
+  font-family: "Istok Web", serif;
+  font-size: 325%;
+  font-weight: 200;
+  margin-bottom: 5%;
+  width: 80%;
+  height: 10%;
+  border: 3px solid grey;
+  border-radius: 10px;
+}
+.form_checkboxes {
+  display: flex;
+  justify-content: left;
+  width: 84%;
+  height: 5%;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.form_checkboxes__input {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  appearance: none;
+  width: 10%;
+  height: 100%;
+  border: 1px solid grey;
+  border-radius: 15px;
+  margin-right: 1%;
+  position: relative;
+ 
+}
+
+
+
+.form_checkboxes__input::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  transition: 500ms;
+  background-image: url("../../assets/brain.svg");
+  background-repeat: no-repeat;
+}
+.form_checkboxes__input:checked::after {
+  width: 100%;
+  height: 100%;
+
+  transition: 500ms;
+}
+
+
+
+.form_checkboxes_description {
+  font-size: 300%;
+  font-family: "Istok Web", serif;
+  margin-right: 5%;
+}
+.form_button {
+  font-size: 225%;
+  position: absolute;
+  font-family: "Istok Web", serif;
+  bottom: 9%;
+  width: 35%;
+  height: 7%;
+  background-color: orange;
+  border: 1px solid grey;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.form_description {
+  font-family: "Istok Web", serif;
+  text-align: center;
+  font-size: 225%;
+  position: absolute;
+  bottom: 3%;
+  width: 100%;
+}

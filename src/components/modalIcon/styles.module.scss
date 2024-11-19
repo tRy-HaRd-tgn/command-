@@ -30,7 +30,6 @@
   pointer-events: all;
   z-index: 9999;
 }
-
 .modal__content {
   padding: 0px;
   border-radius: 12px;
@@ -42,4 +41,11 @@
 }
 .modal__content_active {
   transform: scale(1);
+  padding: 0px;
+  border-radius: 12px;
+  background-color: white;
+  width: 50vw;
+  height: 150vh;
+  transform: scale(0.5);
+  transition: 0.4s all;
 }
