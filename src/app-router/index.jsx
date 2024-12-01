@@ -3,7 +3,7 @@ import { publicRoutes } from "../router";
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 export const AppRouter = () => {
-  const auth = useSelector((state) => state.authReducer);
+  const auth = useSelector((state) => state.auth.isAuth);
   const setAuth = (value) => {
     dispatch({ type: "SET_AUTH", isAuth: value });
   };

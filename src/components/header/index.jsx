@@ -1,6 +1,6 @@
 import { brain } from "../../assets";
 import styles from "./styles.module.scss";
-export const Header = ({ active, setActive }) => {
+export const Header = ({ active, setActive, mode }) => {
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
@@ -15,14 +15,21 @@ export const Header = ({ active, setActive }) => {
           <li className={styles.header__list__item}>
             <p className={styles.header__list__item__p}>контакты</p>
           </li>
-          <li className={styles.header__list__item}>
-            <button
-              className={styles.header__list__item__button}
-              onClick={() => setActive(!active)}
-            >
-              вход/регистрация
-            </button>
-          </li>
+          {mode == 1 ? (
+            <li className={styles.header__list__item}>
+              <button
+                className={styles.header__list__item__button}
+                onClick={() => setActive(!active)}
+              >
+                вход/регистрация
+              </button>
+            </li>
+          ) : (
+            <li className={styles.header__list__item} style={{ display: "flex" }}>
+              <p className={styles.header__list__item__p}>Фамилия Имя</p>
+              <img src="" alt="" />
+            </li>
+          )}
         </ul>
       </div>
     </header>

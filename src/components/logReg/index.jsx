@@ -1,12 +1,19 @@
 import styles from "./styles.module.scss";
 import { Button } from "../button";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Input } from "../input";
 export const LogReg = ({ register, state, children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [secondName, setSecondName] = useState("");
   const [thirdName, setThirdName] = useState("");
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.authReducer);
+  const setAuth = (value) => {
+    dispatch({ type: "SET_AUTH", isAuth: value });
+  };
   return (
     <>
       {!state ? (
@@ -16,21 +23,26 @@ export const LogReg = ({ register, state, children }) => {
           action=""
         >
           <p className={styles.form_p}>вход</p>
-          <input
-            placeholder={"login"}
-            className={styles.form_input}
+          <Input
+            placeholder={"email"}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
+          <Input
             placeholder={"password"}
-            className={styles.form_input}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button className={styles.form_button}>логин</Button>
+          <Button
+            onClick={() => {
+              setAuth(true);
+            }}
+            className={styles.form_button}
+          >
+            логин
+          </Button>
           <p className={styles.form_description}>
             нет аккаунта?{" "}
             <span
@@ -44,27 +56,24 @@ export const LogReg = ({ register, state, children }) => {
       ) : (
         <form onSubmit={(e) => e.preventDefault()} className={styles.form}>
           <p className={styles.form_p}>регистрация</p>
-          <input
-            className={styles.form_input}
+          <Input
             style={{ height: "6%" }}
             placeholder={"Фамилия"}
             value={name}
             onChange={(e) => setName(e.target.value)}
-          ></input>
-          <input
-            className={styles.form_input}
+          />
+          <Input
             style={{ height: "6%" }}
             placeholder={"Имя"}
             value={secondName}
             onChange={(e) => setSecondName(e.target.value)}
-          ></input>
-          <input
-            className={styles.form_input}
+          />
+          <Input
             style={{ height: "6%" }}
             placeholder={"Отчество"}
             value={thirdName}
             onChange={(e) => setThirdName(e.target.value)}
-          ></input>
+          />
           <div className={styles.form_checkboxes}>
             <input
               className={styles.form_checkboxes__input}
@@ -87,27 +96,26 @@ export const LogReg = ({ register, state, children }) => {
             />
             <p className={styles.form_checkboxes_description}>Учусь</p>
           </div>
-          <input
+          <Input
             className={styles.form_input}
             style={{ height: "6%" }}
             placeholder={"Место работы/учебы"}
-          ></input>
-          <input
-            className={styles.form_input}
+          />
+          <Input
             style={{ height: "6%", borderColor: "orange" }}
             placeholder={"email"}
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
-          ></input>
-          <input
-            className={styles.form_input}
+          />
+          <Input
             style={{ height: "6%", borderColor: "orange" }}
             placeholder={"password"}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          ></input>
+          />
+
           <Button className={styles.form_button}>регистрация</Button>
           <p className={styles.form_description} onClick={() => register()}>
             Уже есть аккаунт ?{" "}

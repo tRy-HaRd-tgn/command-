@@ -1,18 +1,37 @@
-.form {
+.container {
+  width: 100%;
+  height: calc(100vh);
+}
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 60%;
+  height: 100vh;
+}
+.profileInfo__content {
+  display: flex;
+}
+.profileInfo__title {
+  margin-left: 1%;
+  font-size: 175%;
+  font-family: "Istok Web", serif;
+  font-weight: 700;
+}
+.profileInfo__person {
+  width: 12vw;
+  height: 12vw;
+  background-color: grey;
+  border-radius: 15px;
+}
+.profileInfo__form {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  height: 99.5%;
-  border: 3px orange solid;
-  border-radius: 10px;
-}
-.form_p {
-  margin-bottom: 3%;
-  font-size: 325%;
-  margin-top: 8%;
-  font-family: "Istok Web", serif;
-  font-weight: 700;
+  height: 80vh;
+  width: 100%;
 }
 .form_checkboxes {
   display: flex;
@@ -29,16 +48,13 @@
   align-items: center;
 
   appearance: none;
-  width: 10%;
-  height: 100%;
+  width: 2vw;
+  height: 2vw;
   border: 1px solid grey;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-right: 1%;
   position: relative;
- 
 }
-
-
 
 .form_checkboxes__input::after {
   content: "";
@@ -58,27 +74,31 @@
 }
 
 .form_checkboxes_description {
-  font-size: 300%;
+  font-size: calc(100vw / 75);
   font-family: "Istok Web", serif;
   margin-right: 5%;
+  color: gray;
 }
 .form_button {
-  font-size: 225%;
-  position: absolute;
+  margin-left: 7.8%;
+  font-size: calc(100vh / 35);
   font-family: "Istok Web", serif;
   bottom: 9%;
   width: 35%;
-  height: 7%;
+  height: 100%;
   background-color: orange;
-  border: 1px solid grey;
-  border-radius: 15px;
+  border: 1px solid orange;
+  border-radius: 10px;
+  color: white;
   cursor: pointer;
 }
-.form_description {
-  font-family: "Istok Web", serif;
-  text-align: center;
-  font-size: 225%;
-  position: absolute;
-  bottom: 3%;
-  width: 100%;
+.profileInfo__divArrow {
+  height: 65%;
+  display: flex;
+  align-items: center;
+}
+.navArrow {
+  width: 5vw;
+  height: 5vh;
+  cursor: pointer;
 }

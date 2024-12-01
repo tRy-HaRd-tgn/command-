@@ -1,5 +1,8 @@
 import { StartPage } from "../pages/start-page";
-export const privateRoutes = [];
+import { ProfilePage } from "../pages/profile-page";
+export const privateRoutes = [
+  { path: "/", component: <ProfilePage />, exact: true },
+];
 export const publicRoutes = [
-  { path: "/", component: <StartPage></StartPage>, exact: true },
+  { path: "/", component: <StartPage />, exact: true },
 ];

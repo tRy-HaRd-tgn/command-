@@ -2,18 +2,16 @@ import styles from "./styles.module.scss";
 import { Header, ModalIcon } from "../../components";
 import { phone } from "../../assets";
 import { useState } from "react";
-import { Button } from "../../components";
-import { SassColor } from "sass";
 import { LogReg } from "../../components/logReg";
 export const StartPage = (props) => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false); // state is neccessery for turn on amd off modal icon
   const [state, setState] = useState(false); // state is neccessery for the choise of the two forms for the login and register
   const register = () => {
     setState(!state);
   };
   return (
     <>
-      <Header active={active} setActive={setActive} />
+      <Header active={active} setActive={setActive} mode={1}/>
       <ModalIcon
         state={state}
         setState={setState}
