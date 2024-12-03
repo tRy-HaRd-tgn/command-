@@ -1,7 +1,10 @@
 import { StartPage } from "../pages/start-page";
-import { ProfilePage } from "../pages/profile-page";
+import { ProfilePage1 } from "../pages/profile-page1";
+import { ProfilePage2 } from "../pages/profile-page2";
 export const privateRoutes = [
-  { path: "/", component: <ProfilePage />, exact: true },
+  { path: "/", component: <ProfilePage1 />, exact: true },
+  { path: "/profile1", component: <ProfilePage1 />, exact: true },
+  { path: "/profile2", component: <ProfilePage2 />, exact: true },
 ];
 export const publicRoutes = [
   { path: "/", component: <StartPage />, exact: true },

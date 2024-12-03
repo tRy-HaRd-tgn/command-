@@ -1,0 +1,45 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+.container__content {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+
+  justify-content: center;
+}
+.container__content__info {
+  width: 40%;
+  height: 80%;
+}
+.h2 {
+  font-size: 30px;
+  font-family: "Istok Web", serif;
+  color: rgb(72, 72, 72);
+  line-height: 1.2;
+}
+.container__content__info__flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: calc(100% - 36px);
+}
+.buttons_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.form_button {
+  margin-bottom: 5%;
+  width: 83%;
+  font-size: calc(100vh / 35);
+  font-family: "Istok Web", serif;
+  bottom: 9%;
+  height: 100%;
+  background-color: orange;
+  border: 1px solid orange;
+  border-radius: 10px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+}

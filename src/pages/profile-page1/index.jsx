@@ -4,7 +4,9 @@ import { useState } from "react";
 import { Input } from "../../components";
 import { Button } from "../../components";
 import { arrowRight } from "../../assets";
-export const ProfilePage = (props) => {
+import { useNavigate } from "react-router-dom";
+export const ProfilePage1 = (props) => {
+  const navigator = useNavigate();
   const [profileImg, setProfileImg] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -102,7 +104,10 @@ export const ProfilePage = (props) => {
               </div>
             </form>
           </div>
-          <div className={styles.profileInfo__divArrow}>
+          <div
+            className={styles.profileInfo__divArrow}
+            onClick={() => navigator("/profile2")}
+          >
             <img className={styles.navArrow} src={arrowRight} alt="" />
           </div>
         </div>
