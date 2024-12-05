@@ -8,4 +8,5 @@ export const privateRoutes = [
 ];
 export const publicRoutes = [
   { path: "/", component: <StartPage />, exact: true },
+  { path: "*", component: <StartPage />, exact: true },
 ];

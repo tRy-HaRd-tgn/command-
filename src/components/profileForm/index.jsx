@@ -30,12 +30,7 @@ export const ProfileForm = ({ setHardskills, setSoftskills }) => {
         />
       </div>
       <div className={styles.buttons_wrapper}>
-        <Button
-          className={styles.form_button}
-          onClick={() => {
-            setSoftskills(!Softskills);
-          }}
-        >
+        <Button className={styles.form_button} onClick={setSoftskills}>
           оценка Softskills
         </Button>
         <Button
@@ -44,9 +39,7 @@ export const ProfileForm = ({ setHardskills, setSoftskills }) => {
             color: "white",
             borderColor: "grey",
           }}
-          onClick={() => {
-            setHardskills(!Hardskills);
-          }}
+          onClick={setHardskills}
           className={styles.form_button}
         >
           оценка Hardskills

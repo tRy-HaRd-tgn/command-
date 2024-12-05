@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { ProfileForm } from "../../components";
 export const ProfilePage2 = (props) => {
   const navigator = useNavigate();
-  const [Softskills, setSoftskills] = useState("");
-  const [Hardskills, setHardskills] = useState("");
+  const [softSkills, setSoftskills] = useState(false);
+  const [hardSkills, setHardskills] = useState(false);
   return (
     <>
       <div className={styles.container}>
@@ -27,10 +27,18 @@ export const ProfilePage2 = (props) => {
                 alt="error"
               />
               <ProfileForm
-                setHardskills={setHardskills}
-                setSoftskills={setSoftskills}
+                setHardskills={() => {
+                  setSoftskills(false);
+                  setHardskills(!hardSkills);
+                }}
+                setSoftskills={() => {
+                  setHardskills(false);
+                  setSoftskills(!softSkills);
+                }}
               />
               <img className={styles.arrow} src={arrowRight} alt="" />
+              {softSkills ? <>soft</> : <></>}
+              {hardSkills ? <>hard</> : <></>}
             </div>
           </div>
         </div>
