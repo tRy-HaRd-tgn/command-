@@ -66,6 +66,7 @@ export const ProfileForm = ({ setHardskills, setSoftskills }) => {
           textAlign: "center",
           fontSize: "calc(125% / 1.2)",
           marginLeft: "8%",
+          marginTop: "2%",
         }}
         className={styles.form_button}
       >

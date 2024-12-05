@@ -1,9 +1,13 @@
 import styles from "./styles.module.scss";
-import { Header } from "../../components";
 import { arrowRight, arrowLeft } from "../../assets";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ProfileForm } from "../../components";
+import {
+  ProfileForm,
+  Header,
+  SoftSkillsForm,
+  HardSkillsForm,
+} from "../../components";
 export const ProfilePage2 = (props) => {
   const navigator = useNavigate();
   const [softSkills, setSoftskills] = useState(false);
@@ -37,8 +41,8 @@ export const ProfilePage2 = (props) => {
                 }}
               />
               <img className={styles.arrow} src={arrowRight} alt="" />
-              {softSkills ? <>soft</> : <></>}
-              {hardSkills ? <>hard</> : <></>}
+              {softSkills ? <SoftSkillsForm /> : <></>}
+              {hardSkills ? <HardSkillsForm /> : <></>}
             </div>
           </div>
         </div>
