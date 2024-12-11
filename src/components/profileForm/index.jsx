@@ -1,7 +1,12 @@
 import styles from "./styles.module.scss";
 import { Button, Input } from "../../components";
 import { useState } from "react";
-export const ProfileForm = ({ setHardskills, setSoftskills }) => {
+export const ProfileForm = ({
+  softSkills,
+  hardSkills,
+  setHardskills,
+  setSoftskills,
+}) => {
   const [group, setGroup] = useState("");
   const [direction, setDirection] = useState("");
   const [project, setProject] = useState("");
@@ -30,15 +35,31 @@ export const ProfileForm = ({ setHardskills, setSoftskills }) => {
         />
       </div>
       <div className={styles.buttons_wrapper}>
-        <Button className={styles.form_button} onClick={setSoftskills}>
+        <Button
+          style={
+            !softSkills
+              ? { backgroundColor: "grey", color: "white", borderColor: "grey" }
+              : {
+                  backgroundColor: "orange",
+                  color: "white",
+                  borderColor: "orange",
+                }
+          }
+          className={styles.form_button}
+          onClick={setSoftskills}
+        >
           оценка Softskills
         </Button>
         <Button
-          style={{
-            backgroundColor: "grey",
-            color: "white",
-            borderColor: "grey",
-          }}
+          style={
+            !hardSkills
+              ? { backgroundColor: "grey", color: "white", borderColor: "grey" }
+              : {
+                  backgroundColor: "orange",
+                  color: "white",
+                  borderColor: "orange",
+                }
+          }
           onClick={setHardskills}
           className={styles.form_button}
         >

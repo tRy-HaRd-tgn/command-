@@ -100,7 +100,7 @@ export const ProfilePage1 = (props) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div style={{ width: "100%" }}>
-                <Button className={styles.form_button}>логин</Button>
+                <Button className={styles.form_button}>сохранить</Button>
               </div>
             </form>
           </div>

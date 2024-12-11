@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-export const ProgressBar = ({ state }) => {
+export const ProgressBar = ({ state, style, active }) => {
   const [filled, setField] = useState(0);
   const [loading, setLoading] = useState(0);
   useEffect(() => {
     setField(state * 10);
   }, [state]);
   return (
-    <body style={{ backgroundColor: "black" }}>
-      <div className={styles.progressbar}>
+    <body
+      style={
+        !style
+          ? { backgroundColor: "black" }
+          : { border: "1px solid orange", borderRadius: "20px" }
+      }
+    >
+      <div className={styles.progressbar} style={style}>
         <div
           style={{
             height: "100%",
@@ -16,8 +22,19 @@ export const ProgressBar = ({ state }) => {
             backgroundColor: "orange",
             transition: `width 0.5s`,
           }}
-        ></div>
-        <span className={styles.progressBarPercentage}>{filled}%</span>
+        />
+        <span
+          style={
+            active && {
+              color: "black",
+              position: "absolute",
+              left: `${filled > 10 ? filled - 14 : filled}%`,
+              top: "5%",
+            }
+          }
+        >
+          {state * 10}%
+        </span>
       </div>
     </body>
   );

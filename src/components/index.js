@@ -5,6 +5,7 @@ import { Input } from "./input";
 import { ProfileForm } from "./profileForm";
 import { SoftSkillsForm } from "./softSkillsForm";
 import { HardSkillsForm } from "./hardSkillsForm";
+import { ResultSoftSkills } from "./resultSoftSkills";
 export {
   Header,
   ModalIcon,
@@ -13,4 +14,5 @@ export {
   ProfileForm,
   SoftSkillsForm,
   HardSkillsForm,
+  ResultSoftSkills,
 };
