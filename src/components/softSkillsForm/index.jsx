@@ -1,12 +1,50 @@
 import styles from "./styles.module.scss";
 import { SoftSkillQuestion } from "../softSkillQuestion";
-export const SoftSkillsForm = (props) => {
+import { data } from "./data";
+import { arrowRight } from "../../assets";
+import { useState } from "react";
+export const SoftSkillsForm = ({
+  array,
+  setSoftResults,
+  setArray,
+  setSoftskills,
+}) => {
   return (
-    <div className={styles.container}>
-      <h2 className={styles.h2}>Какой вклад я могу внести в работу команды?</h2>
-      {...new Array(7)
-        .fill(0)
-        .map((_, index) => <SoftSkillQuestion style={{marginLeft: "1%"}} text={`Вопрос ${index + 1}`} />)}
+    <div style={{ width: "40%", display: "flex", alignItems: "center" }}>
+      <div className={styles.container}>
+        <h2 className={styles.h2}>
+          Какой вклад я могу внести в работу команды?
+        </h2>
+        {data.map((value, index) => (
+          <SoftSkillQuestion
+            state={array[index]}
+            setState={(e) => {
+              console.log(e);
+              let tempArray = [];
+              tempArray.push.apply(tempArray, array);
+              tempArray[index] = e;
+              setArray(tempArray);
+            }}
+            key={index}
+            style={{ marginLeft: "1%" }}
+            text={index + 1 + ". " + value}
+          />
+        ))}
+      </div>
+      <img
+        style={{
+          cursor: "pointer",
+          marginLeft: "1%",
+          width: "5vh",
+          height: "5vh",
+        }}
+        onClick={() => {
+          setSoftskills(false);
+          setSoftResults(true);
+        }}
+        src={arrowRight}
+        alt="error"
+      />
     </div>
   );
 };

@@ -1,3 +1,17 @@
-.h3{
-    margin-top: 1%;
+.container {
+  height: calc(100% / 6);
+}
+.h3 {
+  margin-top: 1%;
+  font-size: calc(100vh / 65);
+  font-family: "Istok Web", serif;
+  font-weight: 300;
+  width: 100%;
+}
+.index {
+  font-family: "Istok Web", serif;
+  cursor: pointer;
+}
+.index:not(:last-child) {
+  margin-right: calc(100% / 11.5);
 }

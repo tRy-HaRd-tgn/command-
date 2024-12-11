@@ -12,6 +12,8 @@ export const ProfilePage2 = (props) => {
   const navigator = useNavigate();
   const [softSkills, setSoftskills] = useState(false);
   const [hardSkills, setHardskills] = useState(false);
+  const [softResults, setSoftResults] = useState(false);
+  const [array, setArray] = useState([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
   return (
     <>
       <div className={styles.container}>
@@ -40,8 +42,7 @@ export const ProfilePage2 = (props) => {
                   setSoftskills(!softSkills);
                 }}
               />
-              <img className={styles.arrow} src={arrowRight} alt="" />
-              {softSkills ? <SoftSkillsForm /> : <></>}
+              {softSkills ? <SoftSkillsForm setSoftResults={setSoftResults} setSoftskills={setSoftskills} array={array} setArray={setArray} /> : <></>}
               {hardSkills ? <HardSkillsForm /> : <></>}
             </div>
           </div>
