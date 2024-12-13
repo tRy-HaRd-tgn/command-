@@ -6,6 +6,7 @@ import { ProfileForm } from "./profileForm";
 import { SoftSkillsForm } from "./softSkillsForm";
 import { HardSkillsForm } from "./hardSkillsForm";
 import { ResultSoftSkills } from "./resultSoftSkills";
+import { ResultSoftSkillsSecond } from "./resultSoftSkillsSecond";
 export {
   Header,
   ModalIcon,
@@ -15,4 +16,5 @@ export {
   SoftSkillsForm,
   HardSkillsForm,
   ResultSoftSkills,
+  ResultSoftSkillsSecond,
 };

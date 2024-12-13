@@ -8,6 +8,7 @@ import {
   SoftSkillsForm,
   HardSkillsForm,
   ResultSoftSkills,
+  ResultSoftSkillsSecond,
 } from "../../components";
 export const ProfilePage2 = (props) => {
   const navigator = useNavigate();
@@ -36,19 +37,22 @@ export const ProfilePage2 = (props) => {
                 alt="error"
               />
               <ProfileForm
-                setHardskills={() => {
-                  setSoftskills(false);
-                  setHardskills(!hardSkills);
-                  setSoftResults(false);
-                }}
                 hardSkills={hardSkills}
                 softSkills={softSkills}
                 softResults={softResults}
                 hardResults={hardResults}
+                softResultsSecond={softResultsSecond}
                 setSoftskills={() => {
                   setHardskills(false);
                   setSoftskills(!softSkills);
                   setSoftResults(false);
+                  setSoftResultsSecond(false);
+                }}
+                setHardskills={() => {
+                  setSoftskills(false);
+                  setHardskills(!hardSkills);
+                  setSoftResults(false);
+                  setSoftResultsSecond(false);
                 }}
               />
               {softSkills && (
@@ -59,7 +63,17 @@ export const ProfilePage2 = (props) => {
                   setArray={setArray}
                 />
               )}
-              {softResults && <ResultSoftSkills setSoftResultsSecond={setSoftResultsSecond} />}
+              {softResults && (
+                <ResultSoftSkills
+                  setSoftResults={setSoftResults}
+                  setSoftResultsSecond={setSoftResultsSecond}
+                />
+              )}
+              {softResultsSecond && (
+                <ResultSoftSkillsSecond
+                  setSoftResultsSecond={setSoftResultsSecond}
+                />
+              )}
               {hardSkills && <HardSkillsForm />}
             </div>
           </div>

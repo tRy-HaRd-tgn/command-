@@ -10,7 +10,7 @@ export const SoftSkillsForm = ({
   setSoftskills,
 }) => {
   return (
-    <div style={{ width: "40%", display: "flex", alignItems: "center" }}>
+    <div style={{ width: "auto", display: "flex", alignItems: "center" }}>
       <div className={styles.container}>
         <h2 className={styles.h2}>
           Какой вклад я могу внести в работу команды?

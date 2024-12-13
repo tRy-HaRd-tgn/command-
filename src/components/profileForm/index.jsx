@@ -8,10 +8,11 @@ export const ProfileForm = ({
   setSoftskills,
   softResults,
   hardResults,
+  softResultsSecond,
 }) => {
   function styleDefiner(temp) {
     if (temp == 1) {
-      if (!softSkills && !softResults) {
+      if (!softSkills && !softResults && !softResultsSecond) {
         return { backgroundColor: "grey", color: "white", borderColor: "grey" };
       } else {
         return {

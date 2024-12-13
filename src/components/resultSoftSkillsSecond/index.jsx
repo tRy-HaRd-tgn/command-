@@ -1,12 +1,8 @@
-import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import { arrowRight } from "../../assets";
+import { useEffect, useState } from "react";
 import { ProgressBar } from "../progressBar";
-export const ResultSoftSkills = ({
-  props,
-  setSoftResultsSecond,
-  setSoftResults,
-}) => {
+import { arrowRight } from "../../assets";
+export const ResultSoftSkillsSecond = (props) => {
   const [role, setRole] = useState("1");
   const [description, setDescription] = useState(
     "  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus error reprehenderit, rem consequuntur magnam veritatis ducimus ad architecto, quibusdam voluptatem enim assumenda aliquid animi ipsa aperiam, repudiandae eaque ut libero."
@@ -32,7 +28,7 @@ export const ResultSoftSkills = ({
       }}
     >
       <div className={styles.container}>
-        <h2>Преобладающая роль в команде</h2>
+        <h2>Второстепенная роль в команде</h2>
         <div className={styles.role_container}>
           <h1 style={{ color: "orange" }}>{role}</h1>
           <div style={{ width: "50%" }}>
@@ -66,8 +62,7 @@ export const ResultSoftSkills = ({
           height: "5vh",
         }}
         onClick={() => {
-          setSoftResultsSecond(true);
-          setSoftResults(false);
+          setSoftResultsSecond(false);
         }}
         src={arrowRight}
         alt="error"
