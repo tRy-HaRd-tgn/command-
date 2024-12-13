@@ -6,7 +6,36 @@ export const ProfileForm = ({
   hardSkills,
   setHardskills,
   setSoftskills,
+  softResults,
+  hardResults,
 }) => {
+  function styleDefiner(temp) {
+    if (temp == 1) {
+      if (!softSkills && !softResults) {
+        return { backgroundColor: "grey", color: "white", borderColor: "grey" };
+      } else {
+        return {
+          backgroundColor: "orange",
+          color: "white",
+          borderColor: "orange",
+        };
+      }
+    } else {
+      if (!hardSkills && !hardResults) {
+        return {
+          backgroundColor: "grey",
+          color: "white",
+          borderColor: "grey",
+        };
+      } else {
+        return {
+          backgroundColor: "orange",
+          color: "white",
+          borderColor: "orange",
+        };
+      }
+    }
+  }
   const [group, setGroup] = useState("");
   const [direction, setDirection] = useState("");
   const [project, setProject] = useState("");
@@ -36,30 +65,14 @@ export const ProfileForm = ({
       </div>
       <div className={styles.buttons_wrapper}>
         <Button
-          style={
-            !softSkills
-              ? { backgroundColor: "grey", color: "white", borderColor: "grey" }
-              : {
-                  backgroundColor: "orange",
-                  color: "white",
-                  borderColor: "orange",
-                }
-          }
+          style={styleDefiner(1)}
           className={styles.form_button}
           onClick={setSoftskills}
         >
           оценка Softskills
         </Button>
         <Button
-          style={
-            !hardSkills
-              ? { backgroundColor: "grey", color: "white", borderColor: "grey" }
-              : {
-                  backgroundColor: "orange",
-                  color: "white",
-                  borderColor: "orange",
-                }
-          }
+          style={styleDefiner(0)}
           onClick={setHardskills}
           className={styles.form_button}
         >

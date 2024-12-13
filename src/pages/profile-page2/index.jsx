@@ -14,6 +14,7 @@ export const ProfilePage2 = (props) => {
   const [softSkills, setSoftskills] = useState(false);
   const [hardSkills, setHardskills] = useState(false);
   const [softResults, setSoftResults] = useState(false);
+  const [hardResults, setHardResults] = useState(false);
   const [softResultsSecond, setSoftResultsSecond] = useState(false);
   const [array, setArray] = useState([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
   return (
@@ -42,6 +43,8 @@ export const ProfilePage2 = (props) => {
                 }}
                 hardSkills={hardSkills}
                 softSkills={softSkills}
+                softResults={softResults}
+                hardResults={hardResults}
                 setSoftskills={() => {
                   setHardskills(false);
                   setSoftskills(!softSkills);
