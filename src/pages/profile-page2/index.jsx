@@ -9,6 +9,7 @@ import {
   HardSkillsForm,
   ResultSoftSkills,
   ResultSoftSkillsSecond,
+  Projects,
 } from "../../components";
 export const ProfilePage2 = (props) => {
   const navigator = useNavigate();
@@ -18,11 +19,21 @@ export const ProfilePage2 = (props) => {
   const [hardResults, setHardResults] = useState(false);
   const [softResultsSecond, setSoftResultsSecond] = useState(false);
   const [array, setArray] = useState([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+  const [projects, setProjects] = useState(false);
   return (
     <>
       <div className={styles.container}>
         <header>
-          <Header />
+          <Header
+            projects={projects}
+            setProjects={() => {
+              setProjects(!projects);
+              setHardskills(false);
+              setSoftskills(false);
+              setSoftResults(false);
+              setSoftResultsSecond(false);
+            }}
+          />
         </header>
         <div className={styles.container__content}>
           <div className={styles.container__content__info}>
@@ -47,12 +58,14 @@ export const ProfilePage2 = (props) => {
                   setSoftskills(!softSkills);
                   setSoftResults(false);
                   setSoftResultsSecond(false);
+                  setProjects(false);
                 }}
                 setHardskills={() => {
                   setSoftskills(false);
                   setHardskills(!hardSkills);
                   setSoftResults(false);
                   setSoftResultsSecond(false);
+                  setProjects(false);
                 }}
               />
               {softSkills && (
@@ -75,6 +88,7 @@ export const ProfilePage2 = (props) => {
                 />
               )}
               {hardSkills && <HardSkillsForm />}
+              {projects && <Projects />}
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { brain } from "../../assets";
 import styles from "./styles.module.scss";
-export const Header = ({ active, setActive, mode }) => {
+export const Header = ({ setProjects, projects, active, setActive, mode }) => {
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
@@ -9,7 +9,10 @@ export const Header = ({ active, setActive, mode }) => {
       </div>
       <div style={{ width: "90%" }}>
         <ul className={styles.header__list}>
-          <li className={styles.header__list__item}>
+          <li
+            className={styles.header__list__item}
+            onClick={() => setProjects()}
+          >
             <p className={styles.header__list__item__p}>витрина проектов</p>
           </li>
           <li className={styles.header__list__item}>
@@ -25,7 +28,10 @@ export const Header = ({ active, setActive, mode }) => {
               </button>
             </li>
           ) : (
-            <li className={styles.header__list__item} style={{ display: "flex" }}>
+            <li
+              className={styles.header__list__item}
+              style={{ display: "flex" }}
+            >
               <p className={styles.header__list__item__p}>Фамилия Имя</p>
               <img src="" alt="" />
             </li>

@@ -96,12 +96,13 @@ export const ProfileForm = ({
       </div>
       <Button
         style={{
-          height: "7%",
+          height: "auto",
           width: "24%",
           textAlign: "center",
           fontSize: "calc(125% / 1.2)",
           marginLeft: "8%",
           marginTop: "2%",
+          
         }}
         className={styles.form_button}
       >

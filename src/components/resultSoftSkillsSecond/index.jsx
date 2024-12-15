@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
 import { ProgressBar } from "../progressBar";
 import { arrowRight } from "../../assets";
-export const ResultSoftSkillsSecond = (props) => {
+export const ResultSoftSkillsSecond = ({ props, setSoftResultsSecond }) => {
   const [role, setRole] = useState("1");
   const [description, setDescription] = useState(
     "  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus error reprehenderit, rem consequuntur magnam veritatis ducimus ad architecto, quibusdam voluptatem enim assumenda aliquid animi ipsa aperiam, repudiandae eaque ut libero."

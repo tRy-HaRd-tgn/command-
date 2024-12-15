@@ -7,14 +7,18 @@ import { SoftSkillsForm } from "./softSkillsForm";
 import { HardSkillsForm } from "./hardSkillsForm";
 import { ResultSoftSkills } from "./resultSoftSkills";
 import { ResultSoftSkillsSecond } from "./resultSoftSkillsSecond";
+import { Projects } from "./projectsForm";
+import { Checkbox } from "./checkBox";
 export {
   Header,
   ModalIcon,
   Button,
+  Checkbox,
   Input,
   ProfileForm,
   SoftSkillsForm,
   HardSkillsForm,
   ResultSoftSkills,
   ResultSoftSkillsSecond,
+  Projects,
 };
