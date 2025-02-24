@@ -38,6 +38,7 @@
   height: 150vh;
   transform: scale(0.5);
   transition: 0.4s all;
+  border: 5px solid orange;
 }
 .modal__content_active {
   transform: scale(1);

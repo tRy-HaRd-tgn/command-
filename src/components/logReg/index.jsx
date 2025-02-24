@@ -20,6 +20,7 @@ export const LogReg = ({ register, state, children }) => {
         <form
           onSubmit={(e) => e.preventDefault()}
           className={styles.form}
+          style={{ border: "none" }}
           action=""
         >
           <p className={styles.form_p}>вход</p>
