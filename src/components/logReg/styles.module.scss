@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  height: 99.5%;
-  border: 3px orange solid;
+  height: 100%;
+  justify-content: space-evenly;
+  border: 5px orange solid;
   border-radius: 10px;
 }
 .form_p {
@@ -20,7 +20,6 @@
   width: 84%;
   height: 5%;
   align-items: center;
-  margin-bottom: 5%;
 }
 .form_checkboxes__input {
   width: fit-content;
@@ -35,10 +34,7 @@
   border-radius: 15px;
   margin-right: 1%;
   position: relative;
- 
 }
-
-
 
 .form_checkboxes__input::after {
   content: "";
@@ -64,9 +60,7 @@
 }
 .form_button {
   font-size: 225%;
-  position: absolute;
   font-family: "Istok Web", serif;
-  bottom: 9%;
   width: 35%;
   height: 7%;
   background-color: orange;
@@ -78,7 +72,5 @@
   font-family: "Istok Web", serif;
   text-align: center;
   font-size: 225%;
-  position: absolute;
-  bottom: 3%;
   width: 100%;
 }

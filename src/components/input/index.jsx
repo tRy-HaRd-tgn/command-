@@ -11,7 +11,7 @@ export const Input = ({
     <input
       style={style}
       placeholder={placeholder}
-      className={styles.form_input}
+      className={styles.className}
       type={type}
       value={value}
       onChange={onChange}

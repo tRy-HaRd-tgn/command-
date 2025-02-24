@@ -32,10 +32,10 @@
 }
 .modal__content {
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 15px;
   background-color: white;
-  width: 50vw;
-  height: 100vh;
+  width: 70vw;
+  height: 150vh;
   transform: scale(0.5);
   transition: 0.4s all;
 }
@@ -44,8 +44,9 @@
   padding: 0px;
   border-radius: 12px;
   background-color: white;
-  width: 50vw;
-  height: 150vh;
+  width: 80vw;
+  height: 180vh;
   transform: scale(0.5);
   transition: 0.4s all;
+  border: 5px solid orange;
 }

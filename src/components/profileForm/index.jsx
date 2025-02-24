@@ -44,27 +44,19 @@ export const ProfileForm = ({
     <div className={styles.container__content__info__flex}>
       <div className={styles.container__content__info__flex__inputs}>
         <Input
-          style={{
-            height: "29%",
-            fontSize: "135%",
-          }}
+          className={styles.form_input}
           placeholder={"должность/академическая группа"}
           type="text"
           value={group}
           onChange={(e) => setGroup(e.target.value)}
         />
         <Input
-          style={{
-            height: "29%",
-            fontSize: "135%",
-          }}
+          className={styles.form_input}
           placeholder={"направление обучения"}
           type="text"
           value={direction}
           onChange={(e) => setDirection(e.target.value)}
         />
-      </div>
-      <div className={styles.buttons_wrapper}>
         <Button
           style={styleDefiner(1)}
           className={styles.form_button}
@@ -102,7 +94,6 @@ export const ProfileForm = ({
           fontSize: "calc(125% / 1.2)",
           marginLeft: "8%",
           marginTop: "2%",
-          
         }}
         className={styles.form_button}
       >

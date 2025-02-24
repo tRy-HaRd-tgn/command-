@@ -5,7 +5,11 @@ export const ModalIcon = ({ state, setState, active, children, setActive }) => {
     setActive(false);
   };
   const classnames = () => {
-    return active ? !state ?styles.modal__content: styles.modal__content_active : styles.modal__content_active;
+    return active
+      ? !state
+        ? styles.modal__content
+        : styles.modal__content_active
+      : styles.modal__content_active;
   };
   return (
     <>
@@ -15,7 +19,7 @@ export const ModalIcon = ({ state, setState, active, children, setActive }) => {
       >
         <div
           className={classnames()}
-          styles={state ? { width: "70vh", heifght: "150vh" } : {}}
+          styles={state ? { width: "70vh", height: "150vh" } : {}}
           onClick={(e) => e.stopPropagation()}
         >
           {children}

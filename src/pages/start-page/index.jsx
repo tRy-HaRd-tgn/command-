@@ -11,7 +11,7 @@ export const StartPage = (props) => {
   };
   return (
     <>
-      <Header active={active} setActive={setActive} mode={1}/>
+      <Header active={active} setActive={setActive} mode={1} />
       <ModalIcon
         state={state}
         setState={setState}

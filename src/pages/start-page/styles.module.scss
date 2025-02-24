@@ -55,9 +55,14 @@ p {
   position: relative;
 }
 .footer__img {
+  border-radius: 60px;
   position: absolute;
   left: 20%;
   height: 50px;
   bottom: 25px;
   cursor: pointer;
+}
+.footer__img:hover {
+  transform: scale(1.51);
+  border: 2px solid orange;
 }
