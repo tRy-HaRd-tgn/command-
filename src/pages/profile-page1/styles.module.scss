@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: calc(100vh );
+  height: calc(100vh);
 }
 .profileInfo {
   display: flex;
@@ -13,9 +13,11 @@
 }
 .profileInfo__content {
   display: flex;
+  justify-content: space-evenly;
+  height: calc(100vh - 140px);
 }
 .profileInfo__title {
-  margin-left: 1%;
+  margin-left: 4%;
   font-size: 175%;
   font-family: "Istok Web", serif;
   font-weight: 700;
@@ -29,9 +31,10 @@
 .profileInfo__form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 80vh;
-  width: 100%;
+  justify-content: space-between;
+  align-items: left;
+  height: 90%;
+  width: 80%;
 }
 .form_checkboxes {
   display: flex;
@@ -39,7 +42,6 @@
   width: 84%;
   height: 5%;
   align-items: center;
-  margin-bottom: 5%;
 }
 .form_checkboxes__input {
   width: fit-content;
@@ -93,12 +95,12 @@
   cursor: pointer;
 }
 .profileInfo__divArrow {
-  height: 65%;
+  height: 100%;
   display: flex;
   align-items: center;
 }
 .navArrow {
-  width: 5vw;
-  height: 5vh;
+  width: 70%;
+  height: auto;
   cursor: pointer;
 }

@@ -24,26 +24,48 @@ export const ProfilePage1 = (props) => {
             {/*тут будет фото профиля*/}
           </div>
           <div
-            style={{ display: "flex", justifyContent: "center", width: "55%" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              width: "calc(70%)",
+            }}
           >
             <form className={styles.profileInfo__form} action="">
               <Input
-                style={{ height: "6%", fontSize: "135%" }}
-                placeholder={"first name"}
+                style={{
+                  height: "6%",
+                  fontSize: "135%",
+                  borderRadius: "10px",
+                  border: "1px solid black",
+                  paddingLeft: "2%",
+                }}
+                placeholder={"имя"}
                 type="text"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
               <Input
-                style={{ height: "6%", fontSize: "135%" }}
-                placeholder={"second name"}
+                style={{
+                  height: "6%",
+                  fontSize: "135%",
+                  borderRadius: "10px",
+                  border: "1px solid black",
+                  paddingLeft: "2%",
+                }}
+                placeholder={"фамилия"}
                 type="text"
                 value={secondName}
                 onChange={(e) => setSecondName(e.target.value)}
               />
               <Input
-                style={{ height: "6%", fontSize: "135%" }}
-                placeholder={"third name"}
+                style={{
+                  height: "6%",
+                  fontSize: "135%",
+                  borderRadius: "10px",
+                  border: "1px solid black",
+                  paddingLeft: "2%",
+                }}
+                placeholder={"отчество"}
                 type="text"
                 value={thirdName}
                 onChange={(e) => setThirdName(e.target.value)}
@@ -71,8 +93,14 @@ export const ProfilePage1 = (props) => {
                 <p className={styles.form_checkboxes_description}>Учусь</p>
               </div>
               <Input
-                style={{ height: "6%", fontSize: "135%" }}
-                placeholder={"university"}
+                style={{
+                  height: "6%",
+                  fontSize: "135%",
+                  borderRadius: "10px",
+                  border: "1px solid black",
+                  paddingLeft: "2%",
+                }}
+                placeholder={"университет/место работы"}
                 type="text"
                 value={university}
                 onChange={(e) => setUniversity(e.target.value)}
@@ -81,9 +109,11 @@ export const ProfilePage1 = (props) => {
                 style={{
                   height: "6%",
                   fontSize: "135%",
-                  borderColor: "orange",
+                  borderRadius: "10px",
+                  border: "1px solid orange",
+                  paddingLeft: "2%",
                 }}
-                placeholder={"email"}
+                placeholder={"почта"}
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -92,23 +122,32 @@ export const ProfilePage1 = (props) => {
                 style={{
                   height: "6%",
                   fontSize: "135%",
-                  borderColor: "orange",
+                  borderRadius: "10px",
+                  border: "1px solid orange",
+                  paddingLeft: "2%",
                 }}
-                placeholder={"pasword"}
+                placeholder={"пароль"}
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div style={{ width: "100%" }}>
-                <Button className={styles.form_button}>сохранить</Button>
+                <Button
+                  style={{ marginLeft: "0" }}
+                  className={styles.form_button}
+                >
+                  сохранить
+                </Button>
               </div>
             </form>
           </div>
-          <div
-            className={styles.profileInfo__divArrow}
-            onClick={() => navigator("/profile2")}
-          >
-            <img className={styles.navArrow} src={arrowRight} alt="" />
+          <div className={styles.profileInfo__divArrow}>
+            <img
+              className={styles.navArrow}
+              src={arrowRight}
+              alt=""
+              onClick={() => navigator("/profile2")}
+            />
           </div>
         </div>
       </div>
