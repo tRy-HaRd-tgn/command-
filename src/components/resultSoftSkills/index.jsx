@@ -26,7 +26,7 @@ export const ResultSoftSkills = ({
     <div
       style={{
         width: "40%",
-        height: "auto",
+        height: "100%",
         display: "flex",
         alignItems: "center",
       }}

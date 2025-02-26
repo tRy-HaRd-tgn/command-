@@ -10,7 +10,14 @@ export const SoftSkillsForm = ({
   setSoftskills,
 }) => {
   return (
-    <div style={{ width: "auto", display: "flex", alignItems: "center" }}>
+    <div
+      style={{
+        width: "auto",
+        display: "flex",
+        alignItems: "center",
+        height: "100%",
+      }}
+    >
       <div className={styles.container}>
         <h2 className={styles.h2}>
           Какой вклад я могу внести в работу команды?
@@ -35,8 +42,7 @@ export const SoftSkillsForm = ({
         style={{
           cursor: "pointer",
           marginLeft: "1%",
-          width: "5vh",
-          height: "5vh",
+          width: "7vh",
         }}
         onClick={() => {
           setSoftskills(false);

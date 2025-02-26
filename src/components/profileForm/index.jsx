@@ -13,12 +13,23 @@ export const ProfileForm = ({
   function styleDefiner(temp) {
     if (temp == 1) {
       if (!softSkills && !softResults && !softResultsSecond) {
-        return { backgroundColor: "grey", color: "white", borderColor: "grey" };
+        return {
+          backgroundColor: "grey",
+          color: "white",
+          borderColor: "grey",
+          height: "6%",
+          width: "90.5%",
+          paddingLeft: "2%",
+          verticalAlign: "center",
+        };
       } else {
         return {
           backgroundColor: "orange",
           color: "white",
           borderColor: "orange",
+          height: "6%",
+          width: "90.5%",
+          paddingLeft: "2%",
         };
       }
     } else {
@@ -27,12 +38,18 @@ export const ProfileForm = ({
           backgroundColor: "grey",
           color: "white",
           borderColor: "grey",
+          height: "6%",
+          width: "90.5%",
+          paddingLeft: "2%",
         };
       } else {
         return {
           backgroundColor: "orange",
           color: "white",
           borderColor: "orange",
+          height: "6%",
+          width: "90.5%",
+          paddingLeft: "2%",
         };
       }
     }
@@ -44,19 +61,42 @@ export const ProfileForm = ({
     <div className={styles.container__content__info__flex}>
       <div className={styles.container__content__info__flex__inputs}>
         <Input
-          className={styles.form_input}
+          style={{
+            height: "6%",
+            width: "88%",
+            borderRadius: "10px",
+            paddingLeft: "2%",
+            fontSize: "135%",
+          }}
           placeholder={"должность/академическая группа"}
           type="text"
           value={group}
           onChange={(e) => setGroup(e.target.value)}
         />
         <Input
-          className={styles.form_input}
+          style={{
+            height: "6%",
+            width: "88%",
+            borderRadius: "10px",
+            paddingLeft: "2%",
+            fontSize: "135%",
+          }}
           placeholder={"направление обучения"}
           type="text"
           value={direction}
           onChange={(e) => setDirection(e.target.value)}
         />
+        <Button
+          style={{
+            height: "7%",
+            width: "contain",
+            textAlign: "center",
+            fontSize: "calc(125% / 1.2)",
+          }}
+          className={styles.form_button}
+        >
+          сохранить
+        </Button>
         <Button
           style={styleDefiner(1)}
           className={styles.form_button}
@@ -71,34 +111,18 @@ export const ProfileForm = ({
         >
           оценка Hardskills
         </Button>
-        <Input
+        <Button
           style={{
-            height: "100%",
-            margin: "0",
-            paddingTop: "1.1%",
-            paddingBottom: "1.1%",
-            paddingRight: "0.65%",
-            fontSize: "135%",
+            height: "7%",
+            width: "contain",
+            textAlign: "center",
+            fontSize: "calc(125% / 1.2)",
           }}
-          placeholder={"предложить проект"}
-          type="text"
-          value={project}
-          onChange={(e) => setProject(e.target.value)}
-        />
+          className={styles.form_button}
+        >
+          предложить проект
+        </Button>
       </div>
-      <Button
-        style={{
-          height: "auto",
-          width: "24%",
-          textAlign: "center",
-          fontSize: "calc(125% / 1.2)",
-          marginLeft: "8%",
-          marginTop: "2%",
-        }}
-        className={styles.form_button}
-      >
-        сохранить
-      </Button>
     </div>
   );
 };

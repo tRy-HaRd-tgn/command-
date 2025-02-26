@@ -10,28 +10,22 @@ export const AppRouter = () => {
   return (
     <Routes>
       {auth
-        ? privateRoutes.map(
-            // роутинг для авторизированного пользователя
-            (route, index) => (
-              <Route
-                key={index}
-                element={route.component}
-                path={route.path}
-                exact={route.exact}
-              />
-            )
-          )
-        : publicRoutes.map(
-            // роутинг для не авторизированного пользователя
-            (route, index) => (
-              <Route
-                key={index}
-                element={route.component}
-                path={route.path}
-                exact={route.exact}
-              />
-            )
-          )}
+        ? privateRoutes.map((route, index) => (
+            <Route
+              key={index}
+              element={route.component}
+              path={route.path}
+              exact={route.exact}
+            />
+          ))
+        : publicRoutes.map((route, index) => (
+            <Route
+              key={index}
+              element={route.component}
+              path={route.path}
+              exact={route.exact}
+            />
+          ))}
     </Routes>
   );
 };

@@ -1,6 +1,8 @@
 import { brain } from "../../assets";
 import styles from "./styles.module.scss";
+import { useSelector } from "react-redux";
 export const Header = ({ setProjects, projects, active, setActive, mode }) => {
+  const auth = useSelector((state) => state.auth.isAuth);
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
@@ -9,12 +11,16 @@ export const Header = ({ setProjects, projects, active, setActive, mode }) => {
       </div>
       <div style={{ width: "90%" }}>
         <ul className={styles.header__list}>
-          <li
-            className={styles.header__list__item}
-            onClick={() => setProjects()}
-          >
-            <p className={styles.header__list__item__p}>витрина проектов</p>
-          </li>
+          {auth ? (
+            <li
+              className={styles.header__list__item}
+              onClick={() => setProjects()}
+            >
+              <p className={styles.header__list__item__p}>витрина проектов</p>
+            </li>
+          ) : (
+            <></>
+          )}
           <li className={styles.header__list__item}>
             <p className={styles.header__list__item__p}>контакты</p>
           </li>

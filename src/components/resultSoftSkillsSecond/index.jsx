@@ -22,7 +22,7 @@ export const ResultSoftSkillsSecond = ({ props, setSoftResultsSecond }) => {
     <div
       style={{
         width: "40%",
-        height: "auto",
+        height: "100%",
         display: "flex",
         alignItems: "center",
       }}

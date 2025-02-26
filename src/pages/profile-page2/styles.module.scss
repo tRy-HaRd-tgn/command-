@@ -4,14 +4,15 @@
 }
 .container__content {
   width: 100vw;
-  height: auto;
   display: flex;
-
   justify-content: center;
 }
 .container__content__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 100%;
-  height: calc(auto);
+  height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,17 +21,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: calc(80%);
   width: 100%;
 }
 .h2 {
+  margin: 0px;
   font-size: 30px;
   font-family: "Istok Web", serif;
   color: rgb(72, 72, 72);
   line-height: 1.2;
 }
 .arrow {
-  width: 5vh;
-  height: 5vh;
+  width: 7vh;
   cursor: pointer;
 }
