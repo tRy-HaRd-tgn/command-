@@ -17,7 +17,7 @@ export const LogReg = ({ register, state, children }) => {
   const [error, setError] = useState(false);
   const [secError, setSecError] = useState(false);
   const [ok, setOk] = useState(false);
-  const auth = useSelector((state) => state.authReducer);
+  const [loading, setLoading] = useState(true);
   const setAuth = (value) => {
     dispatch({ type: "SET_AUTH", isAuth: value });
   };
@@ -70,6 +70,7 @@ export const LogReg = ({ register, state, children }) => {
               try {
                 const responce = await AuthService.login(email, password);
                 setAuth(true);
+                window.location.reload();
               } catch (e) {
                 setError("Ошибка авторизации");
               }

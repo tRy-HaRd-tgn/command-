@@ -3,6 +3,7 @@ import { ProfilePage1 } from "../pages/profile-page1";
 import { ProfilePage2 } from "../pages/profile-page2";
 import { Confirmation } from "../pages/confirmation-page";
 export const privateRoutes = [
+  { path: "*", component: <ProfilePage1 />, exact: true },
   { path: "/", component: <ProfilePage1 />, exact: true },
   { path: "/profile1", component: <ProfilePage1 />, exact: true },
   { path: "/profile2", component: <ProfilePage2 />, exact: true },

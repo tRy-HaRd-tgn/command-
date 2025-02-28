@@ -5,6 +5,7 @@ const defaultState = {
   patronymic: "undefined",
   university: "undefined",
   employmentStatus: "undefined",
+  profilePicture: "undefined",
 };
 export const userReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -20,6 +21,8 @@ export const userReducer = (state = defaultState, action) => {
       return { ...state, university: action.university };
     case "SET_EMPLOYMENT_STATUS":
       return { ...state, employmentStatus: action.employmentStatus };
+    case "SET_PROFILE_PICTURE":
+      return { ...state, profilePicture: action.profilePicture };
     default:
       return state;
   }
