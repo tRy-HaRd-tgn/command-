@@ -3,6 +3,8 @@ import styles from "./styles.module.scss";
 import { useSelector } from "react-redux";
 export const Header = ({ setProjects, projects, active, setActive, mode }) => {
   const auth = useSelector((state) => state.auth.isAuth);
+  const name = useSelector((state) => state.user.name);
+  const surname = useSelector((state) => state.user.surname);
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
@@ -38,7 +40,9 @@ export const Header = ({ setProjects, projects, active, setActive, mode }) => {
               className={styles.header__list__item}
               style={{ display: "flex" }}
             >
-              <p className={styles.header__list__item__p}>Фамилия Имя</p>
+              <p className={styles.header__list__item__p}>
+                {name + " " + surname}
+              </p>
               <img src="" alt="" />
             </li>
           )}

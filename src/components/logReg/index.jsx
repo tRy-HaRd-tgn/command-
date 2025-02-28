@@ -3,12 +3,15 @@ import { Button } from "../button";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Input } from "../input";
+import AuthService from "../../service/AuthService";
 export const LogReg = ({ register, state, children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [secondName, setSecondName] = useState("");
   const [thirdName, setThirdName] = useState("");
+  const [place, setPlace] = useState("");
+  const [employmentStatus, setEmploymentStatus] = useState("");
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.authReducer);
   const setAuth = (value) => {
@@ -56,8 +59,13 @@ export const LogReg = ({ register, state, children }) => {
             />
           </>
           <Button
-            onClick={() => {
-              setAuth(true);
+            onClick={async () => {
+              try {
+                const responce = await AuthService.login(email, password);
+                setAuth(true);
+              } catch (e) {
+                console.log();
+              }
             }}
             className={styles.form_button}
           >
@@ -127,6 +135,7 @@ export const LogReg = ({ register, state, children }) => {
                 onClick={() => {
                   var checkbox = document.getElementById("checkbox2");
                   checkbox.checked = false;
+                  setEmploymentStatus("WORK");
                 }}
                 id="checkbox1"
               />
@@ -138,6 +147,7 @@ export const LogReg = ({ register, state, children }) => {
                 onClick={() => {
                   var checkbox = document.getElementById("checkbox1");
                   checkbox.checked = false;
+                  setEmploymentStatus("STUDY");
                 }}
               />
               <p className={styles.form_checkboxes_description}>Учусь</p>
@@ -152,6 +162,8 @@ export const LogReg = ({ register, state, children }) => {
                 border: "1px solid black",
                 borderRadius: "10px",
               }}
+              value={place}
+              onChange={(e) => setPlace(e.target.value)}
               placeholder={"Место работы/учебы"}
             />
             <Input
@@ -182,7 +194,28 @@ export const LogReg = ({ register, state, children }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button className={styles.form_button}>регистрация</Button>
+            <Button
+              onClick={async () => {
+                try {
+                  const responce = await AuthService.register(
+                    email,
+                    name,
+                    secondName,
+                    thirdName,
+                    place,
+                    employmentStatus,
+                    password,
+                    password
+                  );
+                  register();
+                } catch (e) {
+                  console.log(e);
+                }
+              }}
+              className={styles.form_button}
+            >
+              регистрация
+            </Button>
             <p className={styles.form_description} onClick={() => register()}>
               Уже есть аккаунт ?{" "}
               <span style={{ color: "orange", cursor: "pointer" }}>логин</span>

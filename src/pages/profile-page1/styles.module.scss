@@ -23,6 +23,9 @@
   font-weight: 700;
 }
 .profileInfo__person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 12vw;
   height: 12vw;
   background-color: grey;

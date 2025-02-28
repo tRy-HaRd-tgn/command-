@@ -5,6 +5,7 @@ import { Input } from "../../components";
 import { Button } from "../../components";
 import { arrowRight } from "../../assets";
 import { useNavigate } from "react-router-dom";
+import putin from "../../assets/putin.jpg";
 export const ProfilePage1 = (props) => {
   const navigator = useNavigate();
   const [profileImg, setProfileImg] = useState("");
@@ -21,7 +22,11 @@ export const ProfilePage1 = (props) => {
         <h1 className={styles.profileInfo__title}>Профиль</h1>
         <div className={styles.profileInfo__content}>
           <div className={styles.profileInfo__person}>
-            {/*тут будет фото профиля*/}
+            <img
+              style={{ width: "100%", height: "100%", borderRadius: "15px" }}
+              src={putin}
+              alt="error"
+            />
           </div>
           <div
             style={{
