@@ -5,7 +5,9 @@ import { Input } from "../../components";
 import { Button } from "../../components";
 import { arrowRight } from "../../assets";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import putin from "../../assets/putin.jpg";
+import AuthService from "../../service/AuthService";
 export const ProfilePage1 = (props) => {
   const navigator = useNavigate();
   const [profileImg, setProfileImg] = useState("");
@@ -15,6 +17,7 @@ export const ProfilePage1 = (props) => {
   const [firstName, setFirstName] = useState("");
   const [secondName, setSecondName] = useState("");
   const [thirdName, setThirdName] = useState("");
+  useEffect(() => {});
   return (
     <div className={styles.container}>
       <Header />
@@ -136,12 +139,28 @@ export const ProfilePage1 = (props) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <div style={{ width: "100%" }}>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
                 <Button
                   style={{ marginLeft: "0" }}
                   className={styles.form_button}
                 >
                   сохранить
+                </Button>
+                <Button
+                  style={{ marginLeft: "0" }}
+                  className={styles.form_button}
+                  onClick={() => {
+                    const responce = AuthService.logout();
+                    console.log(responce);
+                  }}
+                >
+                  выйти
                 </Button>
               </div>
             </form>
