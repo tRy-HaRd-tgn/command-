@@ -1,6 +1,8 @@
 import styles from "./styles.module.scss";
 import { Button, Input } from "../../components";
 import { useState } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 export const ProfileForm = ({
   softSkills,
   hardSkills,
@@ -56,7 +58,12 @@ export const ProfileForm = ({
   }
   const [group, setGroup] = useState("");
   const [direction, setDirection] = useState("");
-  const [project, setProject] = useState("");
+  const appointment = useSelector((state) => state.user.appointment);
+  const studyDirection = useSelector((state) => state.user.studyDirection);
+  useEffect(() => {
+    setGroup(appointment);
+    setDirection(studyDirection);
+  }, []);
   return (
     <div className={styles.container__content__info__flex}>
       <div className={styles.container__content__info__flex__inputs}>

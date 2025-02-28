@@ -17,7 +17,8 @@ export const LogReg = ({ register, state, children }) => {
   const [error, setError] = useState(false);
   const [secError, setSecError] = useState(false);
   const [ok, setOk] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [appointment, setAppointment] = useState(""); // НЕ ЗАБУДБ ДОБАВИТЬ ИШАК ЕБАННЫЙ
+  const [studyDirection, setStudyDirection] = useState(""); // НЕ ЗАБУДБ ДОБАВИТЬ ИШАК ЕБАННЫЙ
   const setAuth = (value) => {
     dispatch({ type: "SET_AUTH", isAuth: value });
   };
@@ -102,6 +103,14 @@ export const LogReg = ({ register, state, children }) => {
               регистрация
             </span>
           </p>
+          <p className={styles.form_description}>
+            <span
+              onClick={(e) => {}}
+              style={{ color: "orange", cursor: "pointer" }}
+            >
+              забыли пароль ?
+            </span>
+          </p>
         </form>
       ) : (
         <>
@@ -150,6 +159,32 @@ export const LogReg = ({ register, state, children }) => {
               value={thirdName}
               onChange={(e) => setThirdName(e.target.value)}
             />
+            <Input
+              style={{
+                height: "8%",
+                width: "80%",
+                paddingLeft: "2%",
+                fontSize: "335%",
+                border: "1px solid black",
+                borderRadius: "10px",
+              }}
+              placeholder={"Должность/академическая группа"}
+              value={appointment}
+              onChange={(e) => setAppointment(e.target.value)}
+            />
+            <Input
+              style={{
+                height: "8%",
+                width: "80%",
+                paddingLeft: "2%",
+                fontSize: "335%",
+                border: "1px solid black",
+                borderRadius: "10px",
+              }}
+              placeholder={"Направление обучения"}
+              value={studyDirection}
+              onChange={(e) => setStudyDirection(e.target.value)}
+            />
             <div className={styles.form_checkboxes}>
               <input
                 className={styles.form_checkboxes__input}
@@ -197,7 +232,7 @@ export const LogReg = ({ register, state, children }) => {
                 border: "1px solid orange",
                 borderRadius: "10px",
               }}
-              placeholder={"почта"}
+              placeholder={"Почта"}
               type="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
@@ -211,7 +246,7 @@ export const LogReg = ({ register, state, children }) => {
                 border: "1px solid orange",
                 borderRadius: "10px",
               }}
-              placeholder={"пароль"}
+              placeholder={"Пароль"}
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -227,7 +262,9 @@ export const LogReg = ({ register, state, children }) => {
                     place,
                     employmentStatus,
                     password,
-                    password
+                    password,
+                    studyDirection,
+                    appointment
                   );
                   setSecError("");
                   setOk(true);

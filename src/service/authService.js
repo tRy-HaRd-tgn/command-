@@ -8,7 +8,9 @@ export default class AuthService {
     university,
     employmentStatus,
     password,
-    passwordRepeat
+    passwordRepeat,
+    studyDirection,
+    appointment
   ) {
     return $api.post("/auth/register", {
       email,
@@ -19,6 +21,8 @@ export default class AuthService {
       employmentStatus,
       password,
       passwordRepeat,
+      appointment,
+      studyDirection,
     });
   }
   static async login(email, password) {
@@ -29,5 +33,11 @@ export default class AuthService {
   }
   static async confirm(token) {
     return $api.post("/auth/email-confirmation", { token });
+  }
+  static async passwordResetReq(email) {
+    return $api.post("/auth/password-recovery/reset", email);
+  }
+  static async passwordReset(password) {
+    return $api.post("/auth/password-recovery/new", { password });
   }
 }

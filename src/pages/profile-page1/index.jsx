@@ -88,10 +88,10 @@ export const ProfilePage1 = (props) => {
                       border: "1px solid black",
                       paddingLeft: "2%",
                     }}
-                    placeholder={"имя"}
+                    placeholder={"фамилия"}
                     type="text"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+                    value={secondName}
+                    onChange={(e) => setSecondName(e.target.value)}
                   />
                   <Input
                     style={{
@@ -101,11 +101,12 @@ export const ProfilePage1 = (props) => {
                       border: "1px solid black",
                       paddingLeft: "2%",
                     }}
-                    placeholder={"фамилия"}
+                    placeholder={"имя"}
                     type="text"
-                    value={secondName}
-                    onChange={(e) => setSecondName(e.target.value)}
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                   />
+
                   <Input
                     style={{
                       height: "6%",
@@ -171,6 +172,22 @@ export const ProfilePage1 = (props) => {
                     <Button
                       style={{ marginLeft: "0" }}
                       className={styles.form_button}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        try {
+                          const responce = UserService.updateProfile(
+                            secondName,
+                            firstName,
+                            thirdName,
+                            university,
+                            employmentStatus2,
+                            false
+                          );
+                          window.location.reload();
+                        } catch (e) {
+                          console.log(e);
+                        }
+                      }}
                     >
                       сохранить
                     </Button>

@@ -8,7 +8,7 @@ export default class UserService {
     formData.append("file", file);
     return $api.patch("users/profile/avatar", formData);
   }
-  static async confirm(
+  static async updateProfile(
     surname,
     name,
     patronymic,

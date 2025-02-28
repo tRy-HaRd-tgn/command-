@@ -28,6 +28,12 @@ export const AppRouter = () => {
   const setProfilePicture = (value) => {
     dispatch({ type: "SET_PROFILE_PICTURE", profilePicture: value });
   };
+  const setStudyDirection = (value) => {
+    dispatch({ type: "SET_STUDY_DIRECTION", studyDirection: value });
+  };
+  const setAppointment = (value) => {
+    dispatch({ type: "SET_APPOINTMENT", appointment: value });
+  };
   async function checkAuth() {
     try {
       const response = await UserService.getProfile();
@@ -38,6 +44,8 @@ export const AppRouter = () => {
       setUniversity(response.data.university);
       setEmploymentStatus(response.data.employmentStatus);
       setProfilePicture(response.data.picture);
+      setAppointment(response.data.appointment);
+      setStudyDirection(response.data.studyDirection);
       setAuth(true);
     } catch (e) {
       setAuth(false);
