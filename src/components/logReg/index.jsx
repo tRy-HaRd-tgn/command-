@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Input } from "../input";
 import AuthService from "../../service/AuthService";
+import { useEffect } from "react";
 export const LogReg = ({ register, state, children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,10 +14,16 @@ export const LogReg = ({ register, state, children }) => {
   const [place, setPlace] = useState("");
   const [employmentStatus, setEmploymentStatus] = useState("");
   const dispatch = useDispatch();
+  const [error, setError] = useState(false);
+  const [secError, setSecError] = useState(false);
+  const [ok, setOk] = useState(false);
   const auth = useSelector((state) => state.authReducer);
   const setAuth = (value) => {
     dispatch({ type: "SET_AUTH", isAuth: value });
   };
+  useEffect(() => {
+    setEmploymentStatus("");
+  }, []);
   return (
     <>
       {!state ? (
@@ -64,17 +71,31 @@ export const LogReg = ({ register, state, children }) => {
                 const responce = await AuthService.login(email, password);
                 setAuth(true);
               } catch (e) {
-                console.log();
+                setError("Ошибка авторизации");
               }
             }}
             className={styles.form_button}
           >
             логин
           </Button>
+          {error ? <p className={styles.error}>{error}</p> : <></>}
           <p className={styles.form_description}>
             нет аккаунта?{" "}
             <span
-              onClick={() => register()}
+              onClick={() => {
+                register();
+                setError(false);
+                setSecError(false);
+                setOk(false);
+                let checkbox2 = document.getElementById("checkbox2");
+                let checkbox1 = document.getElementById("checkbox1");
+                if (employmentStatus == "WORKS") {
+                  checkbox1.checked = true;
+                }
+                if (employmentStatus == "STUDY") {
+                  checkbox2.checked = true;
+                }
+              }}
               style={{ color: "orange", cursor: "pointer" }}
             >
               регистрация
@@ -135,7 +156,7 @@ export const LogReg = ({ register, state, children }) => {
                 onClick={() => {
                   var checkbox = document.getElementById("checkbox2");
                   checkbox.checked = false;
-                  setEmploymentStatus("WORK");
+                  setEmploymentStatus("WORKS");
                 }}
                 id="checkbox1"
               />
@@ -207,16 +228,38 @@ export const LogReg = ({ register, state, children }) => {
                     password,
                     password
                   );
-                  register();
+                  setSecError("");
+                  setOk(true);
+                  setTimeout(() => {
+                    register();
+                  }, 5000);
                 } catch (e) {
                   console.log(e);
+                  setSecError(e.response.data.message);
+                  setOk(false);
                 }
               }}
               className={styles.form_button}
             >
               регистрация
             </Button>
-            <p className={styles.form_description} onClick={() => register()}>
+            {secError ? <p className={styles.secError}>{secError}</p> : <></>}
+            {ok ? (
+              <p className={styles.error}>
+                Подтвердите создание в почтовом ящике
+              </p>
+            ) : (
+              <></>
+            )}
+            <p
+              className={styles.form_description}
+              onClick={() => {
+                register();
+                setError(false);
+                setSecError(false);
+                setEmploymentStatus("");
+              }}
+            >
               Уже есть аккаунт ?{" "}
               <span style={{ color: "orange", cursor: "pointer" }}>логин</span>
             </p>

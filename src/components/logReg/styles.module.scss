@@ -8,9 +8,7 @@
   border-radius: 10px;
 }
 .form_p {
-  margin-bottom: 3%;
   font-size: 325%;
-  margin-top: 8%;
   font-family: "Istok Web", serif;
   font-weight: 700;
 }
@@ -49,7 +47,6 @@
 .form_checkboxes__input:checked::after {
   width: 100%;
   height: 100%;
-
   transition: 500ms;
 }
 
@@ -73,4 +70,20 @@
   text-align: center;
   font-size: 225%;
   width: 100%;
+}
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 300%;
+  width: 90%;
+  font-family: "Istok Web", serif;
+  height: 10%;
+}
+.secError {
+  font-size: 300%;
+  width: 90%;
+  font-family: "Istok Web", serif;
+  height: 10%;
+  overflow-y: scroll;
 }
