@@ -3,6 +3,7 @@ import { Button, Input } from "../../components";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import UserService from "../../service/UserService";
 export const ProfileForm = ({
   softSkills,
   hardSkills,
@@ -60,6 +61,11 @@ export const ProfileForm = ({
   const [direction, setDirection] = useState("");
   const appointment = useSelector((state) => state.user.appointment);
   const studyDirection = useSelector((state) => state.user.studyDirection);
+  const firstName = useSelector((state) => state.user.name);
+  const secondName = useSelector((state) => state.user.surname);
+  const thirdName = useSelector((state) => state.user.patronymic);
+  const university = useSelector((state) => state.user.university);
+  const employmentStatus = useSelector((state) => state.user.employmentStatus);
   useEffect(() => {
     setGroup(appointment);
     setDirection(studyDirection);
@@ -101,6 +107,23 @@ export const ProfileForm = ({
             fontSize: "calc(125% / 1.2)",
           }}
           className={styles.form_button}
+          onClick={(e) => {
+            try {
+              const responce = UserService.updateProfile(
+                secondName,
+                firstName,
+                thirdName,
+                university,
+                employmentStatus,
+                false,
+                direction,
+                group
+              );
+              window.location.reload();
+            } catch (e) {
+              console.log(e);
+            }
+          }}
         >
           сохранить
         </Button>

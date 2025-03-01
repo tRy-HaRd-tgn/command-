@@ -14,7 +14,9 @@ export default class UserService {
     patronymic,
     university,
     employmentStatus,
-    isTwoFactorEnabled
+    isTwoFactorEnabled,
+    studyDirection,
+    appointment
   ) {
     return $api.patch("users/profile", {
       surname,
@@ -23,6 +25,8 @@ export default class UserService {
       university,
       employmentStatus,
       isTwoFactorEnabled,
+      studyDirection,
+      appointment,
     });
   }
 }

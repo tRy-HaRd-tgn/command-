@@ -1,8 +1,6 @@
 import styles from "./styles.module.scss";
-import { Header } from "../../components";
+import { Header, Input, Button } from "../../components";
 import { useState } from "react";
-import { Input } from "../../components";
-import { Button } from "../../components";
 import { arrowRight } from "../../assets";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -16,7 +14,9 @@ export const ProfilePage1 = (props) => {
   const patronymic = useSelector((state) => state.user.patronymic);
   const university2 = useSelector((state) => state.user.university);
   const employmentStatus = useSelector((state) => state.user.employmentStatus);
+  const studyDirection = useSelector((state) => state.user.studyDirection);
   const picture = useSelector((state) => state.user.profilePicture);
+  const appointment = useSelector((state) => state.user.appointment);
   const navigator = useNavigate();
   const [profileImg, setProfileImg] = useState("");
   const [university, setUniversity] = useState("");
@@ -181,7 +181,9 @@ export const ProfilePage1 = (props) => {
                             thirdName,
                             university,
                             employmentStatus2,
-                            false
+                            false,
+                            studyDirection,
+                            appointment
                           );
                           window.location.reload();
                         } catch (e) {
