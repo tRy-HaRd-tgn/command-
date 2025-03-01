@@ -3,9 +3,11 @@ import { Header, ModalIcon } from "../../components";
 import { phone } from "../../assets";
 import { useEffect, useState } from "react";
 import { LogReg } from "../../components/logReg";
+import { PasswordReset } from "../../components";
 export const StartPage = (props) => {
   const [active, setActive] = useState(false); // state is neccessery for turn on amd off modal icon
   const [state, setState] = useState(false); // state is neccessery for the choise of the two forms for the login and register
+  const [modal, setModal] = useState(false);
   const register = () => {
     setState(!state);
   };
@@ -26,7 +28,20 @@ export const StartPage = (props) => {
             setActive={setActive}
             active={active}
           >
-            <LogReg register={register} state={state} />
+            <LogReg register={register} state={state} setModal={setModal} />
+          </ModalIcon>
+          <ModalIcon
+            state={state}
+            setState={setState}
+            active={modal}
+            setActive={setModal}
+          >
+            <PasswordReset
+              state={state}
+              setState={setState}
+              active={modal}
+              setActive={setModal}
+            />
           </ModalIcon>
           <div className={styles.container}>
             <div className={styles.container__img}>

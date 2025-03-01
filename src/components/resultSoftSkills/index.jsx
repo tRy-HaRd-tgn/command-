@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import { arrowRight } from "../../assets";
+import { arrowLeft, arrowRight } from "../../assets";
 import { ProgressBar } from "../progressBar";
 export const ResultSoftSkills = ({
   props,
   setSoftResultsSecond,
   setSoftResults,
+  setSoftSkills,
 }) => {
   const [role, setRole] = useState("1");
   const [description, setDescription] = useState(
@@ -31,6 +32,21 @@ export const ResultSoftSkills = ({
         alignItems: "center",
       }}
     >
+      <img
+        style={{
+          cursor: "pointer",
+          marginLeft: "1%",
+          width: "5vh",
+          height: "5vh",
+        }}
+        onClick={() => {
+          setSoftResultsSecond(false);
+          setSoftResults(false);
+          setSoftSkills(true);
+        }}
+        src={arrowLeft}
+        alt="error"
+      />
       <div className={styles.container}>
         <h2>Преобладающая роль в команде</h2>
         <div className={styles.role_container}>

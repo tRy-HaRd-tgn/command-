@@ -9,6 +9,7 @@ import { ResultSoftSkills } from "./resultSoftSkills";
 import { ResultSoftSkillsSecond } from "./resultSoftSkillsSecond";
 import { Projects } from "./projectsForm";
 import { Checkbox } from "./checkBox";
+import { PasswordReset } from "./passwordReset";
 export {
   Header,
   ModalIcon,
@@ -21,4 +22,5 @@ export {
   ResultSoftSkills,
   ResultSoftSkillsSecond,
   Projects,
+  PasswordReset,
 };

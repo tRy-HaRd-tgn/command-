@@ -1,8 +1,12 @@
 import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
 import { ProgressBar } from "../progressBar";
-import { arrowRight } from "../../assets";
-export const ResultSoftSkillsSecond = ({ props, setSoftResultsSecond }) => {
+import { arrowLeft, arrowRight } from "../../assets";
+export const ResultSoftSkillsSecond = ({
+  props,
+  setSoftResultsSecond,
+  setSoftResults,
+}) => {
   const [role, setRole] = useState("1");
   const [description, setDescription] = useState(
     "  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus error reprehenderit, rem consequuntur magnam veritatis ducimus ad architecto, quibusdam voluptatem enim assumenda aliquid animi ipsa aperiam, repudiandae eaque ut libero."
@@ -27,6 +31,19 @@ export const ResultSoftSkillsSecond = ({ props, setSoftResultsSecond }) => {
         alignItems: "center",
       }}
     >
+      <img
+        style={{
+          cursor: "pointer",
+          marginLeft: "1%",
+          width: "5vh",
+          height: "5vh",
+        }}
+        onClick={() => {
+          setSoftResultsSecond(false);
+        }}
+        src={arrowLeft}
+        alt="error"
+      />
       <div className={styles.container}>
         <h2>Второстепенная роль в команде</h2>
         <div className={styles.role_container}>

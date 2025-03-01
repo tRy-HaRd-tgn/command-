@@ -1,0 +1,39 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.label {
+  font-size: 150%;
+  margin-bottom: 10%;
+}
+.input {
+  font-size: 150%;
+  margin-bottom: 10%;
+  border-radius: 15px;
+  border: 1px solid black;
+  padding-left: 1vw;
+}
+.button {
+  border-radius: 15px;
+  font-size: 150%;
+  background-color: white;
+}
+.button:hover {
+  cursor: pointer;
+}
+.result {
+  font-size: 150%;
+  margin-top: 5%;
+  width: 50%;
+  text-align: center;
+}

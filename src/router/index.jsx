@@ -2,6 +2,7 @@ import { StartPage } from "../pages/start-page";
 import { ProfilePage1 } from "../pages/profile-page1";
 import { ProfilePage2 } from "../pages/profile-page2";
 import { Confirmation } from "../pages/confirmation-page";
+import { PasswordReset } from "../pages/passwordReset";
 export const privateRoutes = [
   { path: "*", component: <ProfilePage1 />, exact: true },
   { path: "/", component: <ProfilePage1 />, exact: true },
@@ -14,5 +15,9 @@ export const publicRoutes = [
   {
     path: `/auth/new-verification`,
     component: <Confirmation />,
+  },
+  {
+    path: `/auth/new-password`,
+    component: <PasswordReset />,
   },
 ];

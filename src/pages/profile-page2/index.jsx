@@ -86,12 +86,14 @@ export const ProfilePage2 = (props) => {
               )}
               {softResults && (
                 <ResultSoftSkills
+                  setSoftSkills={setSoftskills}
                   setSoftResults={setSoftResults}
                   setSoftResultsSecond={setSoftResultsSecond}
                 />
               )}
               {softResultsSecond && (
                 <ResultSoftSkillsSecond
+                  setSoftResults={setSoftResults}
                   setSoftResultsSecond={setSoftResultsSecond}
                 />
               )}

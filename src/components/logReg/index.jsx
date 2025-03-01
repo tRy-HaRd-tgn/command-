@@ -5,7 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Input } from "../input";
 import AuthService from "../../service/AuthService";
 import { useEffect } from "react";
-export const LogReg = ({ register, state, children }) => {
+import { ModalIcon } from "../modalIcon";
+export const LogReg = ({ register, state, children, modal, setModal }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -17,8 +18,9 @@ export const LogReg = ({ register, state, children }) => {
   const [error, setError] = useState(false);
   const [secError, setSecError] = useState(false);
   const [ok, setOk] = useState(false);
-  const [appointment, setAppointment] = useState(""); // НЕ ЗАБУДБ ДОБАВИТЬ ИШАК ЕБАННЫЙ
-  const [studyDirection, setStudyDirection] = useState(""); // НЕ ЗАБУДБ ДОБАВИТЬ ИШАК ЕБАННЫЙ
+  const [appointment, setAppointment] = useState("");
+  const [studyDirection, setStudyDirection] = useState("");
+
   const setAuth = (value) => {
     dispatch({ type: "SET_AUTH", isAuth: value });
   };
@@ -105,7 +107,9 @@ export const LogReg = ({ register, state, children }) => {
           </p>
           <p className={styles.form_description}>
             <span
-              onClick={(e) => {}}
+              onClick={(e) => {
+                setModal(!modal);
+              }}
               style={{ color: "orange", cursor: "pointer" }}
             >
               забыли пароль ?

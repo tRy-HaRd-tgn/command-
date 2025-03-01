@@ -35,9 +35,9 @@ export default class AuthService {
     return $api.post("/auth/email-confirmation", { token });
   }
   static async passwordResetReq(email) {
-    return $api.post("/auth/password-recovery/reset", email);
+    return $api.post("/auth/password-recovery/reset", { email });
   }
-  static async passwordReset(password) {
-    return $api.post("/auth/password-recovery/new", { password });
+  static async passwordReset(token, password) {
+    return $api.post(`/auth/password-recovery/new/${token}`, { password });
   }
 }
