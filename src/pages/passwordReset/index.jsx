@@ -7,6 +7,7 @@ export const PasswordReset = (props) => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   let [searchParams, setSearchParams] = useSearchParams();
+  const [loading, setLoading] = useState(false);
   return (
     <div className={styles.container}>
       <form
@@ -26,8 +27,10 @@ export const PasswordReset = (props) => {
           onChange={(e) => setState(e.target.value)}
         />
         <button
+          disabled={loading}
           onClick={async () => {
             try {
+              setLoading(true);
               const response = await AuthService.passwordReset(
                 searchParams.get("token"),
                 state
@@ -37,6 +40,7 @@ export const PasswordReset = (props) => {
               setSuccess("Пароль изменен, через 5 секунд сайт закроется");
               setTimeout(() => {
                 window.close();
+                setLoading(false);
               }, 5000);
             } catch (e) {
               setError(e.response.data.message);

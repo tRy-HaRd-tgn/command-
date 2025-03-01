@@ -5,6 +5,7 @@ export const PasswordReset = ({ setActive }) => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
   return (
     <div className={styles.container}>
       <form className={styles.form} action="">
@@ -22,15 +23,20 @@ export const PasswordReset = ({ setActive }) => {
           type="email"
         />
         <button
+          disabled={loading}
           onClick={async (e) => {
             e.preventDefault();
             try {
+              setLoading(true);
               const response = await AuthService.passwordResetReq(email);
               console.log(response);
               setError("");
               setSuccess(true);
               setTimeout(() => {
                 setActive(false);
+                setEmail("");
+                setSuccess(false);
+                setLoading(false);
               }, 5000);
             } catch (e) {
               console.log(e);
