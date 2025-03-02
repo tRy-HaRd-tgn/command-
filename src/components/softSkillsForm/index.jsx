@@ -1,42 +1,27 @@
 import styles from "./styles.module.scss";
-import { SoftSkillQuestion } from "../softSkillQuestion";
 import { data } from "./data";
 import { arrowRight } from "../../assets";
-import { useState } from "react";
-export const SoftSkillsForm = ({
-  array,
-  setSoftResults,
-  setArray,
-  setSoftskills,
-}) => {
+import { TestComponent } from "../testComponent";
+
+export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
   return (
     <div
       style={{
-        width: "auto",
+        width: "70%",
         display: "flex",
         alignItems: "center",
         height: "100%",
       }}
     >
       <div className={styles.container}>
-        <h2 className={styles.h2}>
-          Какой вклад я могу внести в работу команды?
-        </h2>
-        {data.map((value, index) => (
-          <SoftSkillQuestion
-            state={array[index]}
-            setState={(e) => {
-              console.log(e);
-              let tempArray = [];
-              tempArray.push.apply(tempArray, array);
-              tempArray[index] = e;
-              setArray(tempArray);
-            }}
-            key={index}
-            style={{ marginLeft: "1%" }}
-            text={index + 1 + ". " + value}
-          />
-        ))}
+        <div className={styles.testWrapper}>
+          {data.map((value, index) => (
+            <>
+              <h2 className={styles.h2}>{value.header}</h2>
+              <TestComponent key={index} data={value.questions} />
+            </>
+          ))}
+        </div>
       </div>
       <img
         style={{

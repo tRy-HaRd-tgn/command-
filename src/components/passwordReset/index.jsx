@@ -39,6 +39,7 @@ export const PasswordReset = ({ setActive }) => {
                 setLoading(false);
               }, 5000);
             } catch (e) {
+              setLoading(false);
               console.log(e);
               setError(e.response.data.message);
               setSuccess(false);

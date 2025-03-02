@@ -3,7 +3,9 @@
   height: 100vh;
 }
 .container__content {
-  width: 100vw;
+  width: 90vw;
+  padding-left: 5%;
+  padding-right: 5%;
   display: flex;
   justify-content: center;
 }
@@ -21,7 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(80%);
+  height: calc(100vh - 120px);
   width: 100%;
 }
 .h2 {

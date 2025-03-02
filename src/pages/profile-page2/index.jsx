@@ -18,7 +18,6 @@ export const ProfilePage2 = (props) => {
   const [softResults, setSoftResults] = useState(false);
   const [hardResults, setHardResults] = useState(false);
   const [softResultsSecond, setSoftResultsSecond] = useState(false);
-  const [array, setArray] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [projects, setProjects] = useState(false);
   function checkStyle() {
     if (softSkills || hardSkills) {
@@ -43,10 +42,7 @@ export const ProfilePage2 = (props) => {
         <div className={styles.container__content}>
           <div className={styles.container__content__info}>
             <h2 className={styles.h2}>Профиль</h2>
-            <div
-              style={softSkills || hardSkills ? { height: "fit-content" } : {}}
-              className={styles.divNav}
-            >
+            <div className={styles.divNav}>
               <img
                 onClick={() => {
                   navigator("/");
@@ -80,8 +76,6 @@ export const ProfilePage2 = (props) => {
                 <SoftSkillsForm
                   setSoftResults={setSoftResults}
                   setSoftskills={setSoftskills}
-                  array={array}
-                  setArray={setArray}
                 />
               )}
               {softResults && (
@@ -93,6 +87,7 @@ export const ProfilePage2 = (props) => {
               )}
               {softResultsSecond && (
                 <ResultSoftSkillsSecond
+                  setSoftSkills={setSoftskills}
                   setSoftResults={setSoftResults}
                   setSoftResultsSecond={setSoftResultsSecond}
                 />

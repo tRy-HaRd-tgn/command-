@@ -10,8 +10,8 @@ export const ProgressBar = ({ state, style, active }) => {
     <body
       style={
         !style
-          ? { backgroundColor: "black" }
-          : { border: "1px solid orange", borderRadius: "20px" }
+          ? { backgroundColor: "black", width: "90%" }
+          : { border: "1px solid orange", borderRadius: "20px", width: "90%" }
       }
     >
       <div className={styles.progressbar} style={style}>
@@ -28,13 +28,11 @@ export const ProgressBar = ({ state, style, active }) => {
             active && {
               color: "black",
               position: "absolute",
-              left: `${filled > 10 ? filled - 14 : filled}%`,
+              left: `${filled > 100 ? filled - 14 : filled}%`,
               top: "5%",
             }
           }
-        >
-          {state * 10}%
-        </span>
+        ></span>
       </div>
     </body>
   );

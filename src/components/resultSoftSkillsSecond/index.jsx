@@ -40,6 +40,7 @@ export const ResultSoftSkillsSecond = ({
         }}
         onClick={() => {
           setSoftResultsSecond(false);
+          setSoftResults(true);
         }}
         src={arrowLeft}
         alt="error"

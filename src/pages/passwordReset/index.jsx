@@ -43,6 +43,7 @@ export const PasswordReset = (props) => {
                 setLoading(false);
               }, 5000);
             } catch (e) {
+              setLoading(false);
               setError(e.response.data.message);
               setSuccess(false);
             }
