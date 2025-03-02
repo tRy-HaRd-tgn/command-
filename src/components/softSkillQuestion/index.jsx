@@ -34,12 +34,12 @@ export const SoftSkillQuestion = ({
                   setter(setterState - t);
                   return;
                 }
-                if (sum - t + index <= 10) {
+                if (index + sum <= 10 && t == 0) {
                   setT(index);
                   setter(setterState + index);
                 }
 
-                if (index + sum > 10) {
+                if (index + sum > 10 && sum == 0) {
                   setT(10 - sum);
                   setter(setterState + 10 - sum);
                 }
