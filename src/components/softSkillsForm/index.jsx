@@ -9,7 +9,6 @@ import { text } from "./data";
 export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
   const [modal, setModal] = useState(false);
   const [state, setState] = useState(false);
-
   const [executor, setExecutor] = useState(0);
   const [chairman, setChairman] = useState(0);
   const [shaper, setShaper] = useState(0);
@@ -18,6 +17,7 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
   const [evaluating, setEvaluating] = useState(0);
   const [collectivist, setCollectivist] = useState(0);
   const [finisher, setFinisher] = useState(0);
+  const [vote, setVotes] = useState([0, 0, 0, 0, 0, 0, 0, 0]);
 
   const [sendArray, setSendArray] = useState([
     executor,
@@ -81,8 +81,12 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
             </button>
             {data.map((value, index) => (
               <>
-                <h2 className={styles.h2}>{value.header}</h2>
+                <h2 className={styles.h2}>
+                  {value.header} <span>{vote[index]}/ 10</span>
+                </h2>
                 <TestComponent
+                  setVotes={setVotes}
+                  votes={vote}
                   executor={executor}
                   chairman={chairman}
                   shaper={shaper}
@@ -100,6 +104,7 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
                   setCollectivist={setCollectivist}
                   setFinisher={setFinisher}
                   key={index}
+                  index={index}
                   data={value.questions}
                 />
               </>

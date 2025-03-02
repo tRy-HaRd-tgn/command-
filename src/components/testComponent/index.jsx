@@ -18,12 +18,20 @@ export const TestComponent = ({
   evaluating,
   collectivist,
   finisher,
+  setVotes,
+  votes,
+  index,
 }) => {
   const [array, setArray] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [sum, setSum] = useState(0);
   useEffect(() => {
     setSum(array.reduce((a, b) => a + b));
   }, [array]);
+  useEffect(() => {
+    const arr = votes.slice();
+    arr[index] = sum;
+    setVotes(arr);
+  }, [sum]);
   const arraySetter = [
     setExecutor,
     setChairman,
