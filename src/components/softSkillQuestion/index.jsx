@@ -1,7 +1,15 @@
 import styles from "./styles.module.scss";
 import { ProgressBar } from "../progressBar";
 import { useEffect, useState } from "react";
-export const SoftSkillQuestion = ({ text, style, state, setState, sum }) => {
+export const SoftSkillQuestion = ({
+  text,
+  style,
+  state,
+  setState,
+  sum,
+  setter,
+  setterState,
+}) => {
   const [t, setT] = useState(0);
   useEffect(() => {
     setState(t);
@@ -23,17 +31,17 @@ export const SoftSkillQuestion = ({ text, style, state, setState, sum }) => {
               onClick={(e) => {
                 if (t == index) {
                   setT(0);
-                  console.log(1);
+                  setter(setterState - t);
                   return;
                 }
                 if (sum - t + index <= 10) {
                   setT(index);
-                  console.log(2);
+                  setter(setterState + index);
                 }
 
                 if (index + sum > 10) {
                   setT(10 - sum);
-                  console.log(3);
+                  setter(setterState + 10 - sum);
                 }
               }}
             >

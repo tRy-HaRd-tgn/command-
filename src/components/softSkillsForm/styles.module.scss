@@ -2,8 +2,6 @@
   transition: all 0.5s ease-out;
 }
 .container {
-  padding-top: 2%;
-  padding-bottom: 2%;
   height: fit-content;
   width: 100%;
   border-radius: 10px;
@@ -23,9 +21,57 @@
   padding: 0;
   margin: 0;
   border-bottom: 1.5px solid purple;
+  border-top: 1.5px solid purple;
 }
 .testWrapper {
   width: 100%;
   overflow-y: scroll;
   height: 100%;
+}
+.formButton {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  width: 100%;
+  height: 5%;
+  font-size: 25px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  z-index: 999;
+  background-color: orange;
+  border: 0px;
+  text-align: center;
+
+  cursor: pointer;
+}
+.formButton:hover {
+  background-color: #e29507;
+}
+.formButtonBottom {
+  margin-top: 1%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  width: 100%;
+  height: 5%;
+  font-size: 25px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  z-index: 999;
+  background-color: orange;
+  border: 0px;
+  text-align: center;
+  cursor: pointer;
+}
+.formButtonBottom:hover {
+  background-color: #e29507;
+}
+.modalContent {
+  width: 100%;
+  height: 100%;
+  font-size: 350%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modalContentText {
+  width: 70%;
 }
