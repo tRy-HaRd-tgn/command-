@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import UserService from "../../service/UserService";
+import { useNavigate } from "react-router-dom";
 export const ProfileForm = ({
   softSkills,
   hardSkills,
@@ -70,6 +71,7 @@ export const ProfileForm = ({
     setGroup(appointment);
     setDirection(studyDirection);
   }, []);
+  const router = useNavigate();
   return (
     <div className={styles.container__content__info__flex}>
       <div className={styles.container__content__info__flex__inputs}>
@@ -149,6 +151,7 @@ export const ProfileForm = ({
             fontSize: "calc(125% / 1.2)",
           }}
           className={styles.form_button}
+          onClick={(e) => router("/projectRequest")}
         >
           предложить проект
         </Button>

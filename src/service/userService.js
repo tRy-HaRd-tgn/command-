@@ -29,4 +29,7 @@ export default class UserService {
       appointment,
     });
   }
+  static async getSoftSkillInfo() {
+    return $api.get("users/profile/soft-skill-info");
+  }
 }

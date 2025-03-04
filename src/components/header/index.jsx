@@ -1,10 +1,12 @@
 import { brain } from "../../assets";
 import styles from "./styles.module.scss";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 export const Header = ({ setProjects, projects, active, setActive, mode }) => {
   const auth = useSelector((state) => state.auth.isAuth);
   const name = useSelector((state) => state.user.name);
   const surname = useSelector((state) => state.user.surname);
+  const router = useNavigate();
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
@@ -16,7 +18,9 @@ export const Header = ({ setProjects, projects, active, setActive, mode }) => {
           {auth ? (
             <li
               className={styles.header__list__item}
-              onClick={() => setProjects()}
+              onClick={() => {
+                router("/projects");
+              }}
             >
               <p className={styles.header__list__item__p}>витрина проектов</p>
             </li>
@@ -39,11 +43,13 @@ export const Header = ({ setProjects, projects, active, setActive, mode }) => {
             <li
               className={styles.header__list__item}
               style={{ display: "flex" }}
+              onClick={() => {
+                router("/profile1");
+              }}
             >
               <p className={styles.header__list__item__p}>
                 {name + " " + surname}
               </p>
-              <img src="" alt="" />
             </li>
           )}
         </ul>

@@ -5,6 +5,8 @@ import { TestComponent } from "../testComponent";
 import { useEffect, useState } from "react";
 import { ModalIcon } from "../modalIcon";
 import { text } from "./data";
+import TestService from "../../service/TestService";
+import { roles } from "./data";
 
 export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
   const [modal, setModal] = useState(false);
@@ -110,8 +112,17 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
               </>
             ))}
             <button
-              onClick={() => {
-                console.log(sendArray);
+              onClick={async () => {
+                let obj = {};
+                let keys = Object.keys(roles);
+                for (let i = 0; i < sendArray.length; i++) {
+                  obj[keys[i]] = sendArray[i];
+                }
+                try {
+                  const response = await TestService.belbinTest(obj);
+                } catch (e) {
+                  console.log(e);
+                }
               }}
               className={styles.formButtonBottom}
             >
