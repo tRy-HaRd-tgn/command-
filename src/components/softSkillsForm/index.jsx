@@ -130,19 +130,6 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
             </button>
           </div>
         </div>
-        <img
-          style={{
-            cursor: "pointer",
-            marginLeft: "1%",
-            width: "7vh",
-          }}
-          onClick={() => {
-            setSoftskills(false);
-            setSoftResults(true);
-          }}
-          src={arrowRight}
-          alt="error"
-        />
       </div>
     </>
   );

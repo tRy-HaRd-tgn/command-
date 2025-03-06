@@ -13,7 +13,10 @@ export const ProfileForm = ({
   softResults,
   hardResults,
   softResultsSecond,
+  setSoftResults,
+  softSkillsResult,
 }) => {
+  console.log(softSkillsResult);
   function styleDefiner(temp) {
     if (temp == 1) {
       if (!softSkills && !softResults && !softResultsSecond) {
@@ -58,6 +61,7 @@ export const ProfileForm = ({
       }
     }
   }
+
   const [group, setGroup] = useState("");
   const [direction, setDirection] = useState("");
   const appointment = useSelector((state) => state.user.appointment);
@@ -109,9 +113,9 @@ export const ProfileForm = ({
             fontSize: "calc(125% / 1.2)",
           }}
           className={styles.form_button}
-          onClick={(e) => {
+          onClick={async (e) => {
             try {
-              const responce = UserService.updateProfile(
+              const responce = await UserService.updateProfile(
                 secondName,
                 firstName,
                 thirdName,
@@ -129,13 +133,40 @@ export const ProfileForm = ({
         >
           сохранить
         </Button>
-        <Button
-          style={styleDefiner(1)}
-          className={styles.form_button}
-          onClick={setSoftskills}
-        >
-          оценка Softskills
-        </Button>
+        {softSkillsResult ? (
+          <div className={styles.buttonsWrapper}>
+            <Button
+              style={
+                softSkills
+                  ? { backgroundColor: "orange" }
+                  : { backgroundColor: "grey" }
+              }
+              className={styles.form_buttonHalf}
+              onClick={setSoftskills}
+            >
+              оценка Softskills
+            </Button>
+            <Button
+              style={
+                softResults || softResultsSecond
+                  ? { backgroundColor: "orange" }
+                  : { backgroundColor: "grey" }
+              }
+              className={styles.form_buttonHalf}
+              onClick={setSoftResults}
+            >
+              результаты
+            </Button>
+          </div>
+        ) : (
+          <Button
+            style={styleDefiner(1)}
+            className={styles.form_button}
+            onClick={setSoftskills}
+          >
+            оценка Softskills
+          </Button>
+        )}
         <Button
           style={styleDefiner(0)}
           onClick={setHardskills}

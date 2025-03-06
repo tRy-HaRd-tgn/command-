@@ -26,7 +26,21 @@
   color: white;
   cursor: pointer;
 }
-.form_input {
-  height: 10% !important;
-  font-size: 135% !important;
+
+.form_buttonHalf {
+  height: 100% !important;
+  border-radius: 15px;
+  width: 45% !important;
+  border: none;
+  font-size: 135%;
+  color: white;
+}
+.form_buttonHalf:hover {
+  cursor: pointer;
+}
+.buttonsWrapper {
+  width: 90%;
+  height: 6%;
+  display: flex;
+  justify-content: space-between;
 }

@@ -34,10 +34,20 @@ export const AppRouter = () => {
   const setAppointment = (value) => {
     dispatch({ type: "SET_APPOINTMENT", appointment: value });
   };
+  const saveSoftResults = (value) => {
+    dispatch({ type: "SET_SOFT_SKILL_INFO", softSkillInfo: value });
+  };
+  const setFirstRole = (value) => {
+    dispatch({ type: "SET_FIRST_ROLE", firstRole: value });
+  };
+  const setSecondRole = (value) => {
+    dispatch({ type: "SET_SECOND_ROLE", secondRole: value });
+  };
   async function checkAuth() {
     try {
+      const response2 = await UserService.getSoftSkillInfo();
+      saveSoftResults(response2.data);
       const response = await UserService.getProfile();
-      console.log(response.data);
       setName(response.data.name);
       setSurname(response.data.surname);
       setPatronymic(response.data.patronymic);
@@ -46,6 +56,8 @@ export const AppRouter = () => {
       setProfilePicture(response.data.picture);
       setAppointment(response.data.appointment);
       setStudyDirection(response.data.studyDirection);
+      setFirstRole(response.data.softSkill);
+      setSecondRole(response.data.softSkillSecondary);
       setAuth(true);
     } catch (e) {
       setAuth(false);

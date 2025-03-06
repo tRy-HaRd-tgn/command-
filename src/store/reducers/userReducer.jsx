@@ -1,13 +1,16 @@
 const defaultState = {
-  name: "undefined",
-  email: "undefined",
-  surname: "undefined",
-  patronymic: "undefined",
-  university: "undefined",
-  employmentStatus: "undefined",
-  profilePicture: "undefined",
-  studyDirection: "undefined",
-  appointment: "undefined",
+  name: undefined,
+  email: undefined,
+  surname: undefined,
+  patronymic: undefined,
+  university: undefined,
+  employmentStatus: undefined,
+  profilePicture: undefined,
+  studyDirection: undefined,
+  appointment: undefined,
+  softSkillInfo: undefined,
+  firstRole: undefined,
+  secondRole: undefined,
 };
 export const userReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -29,6 +32,12 @@ export const userReducer = (state = defaultState, action) => {
       return { ...state, studyDirection: action.studyDirection };
     case "SET_APPOINTMENT":
       return { ...state, appointment: action.appointment };
+    case "SET_SOFT_SKILL_INFO":
+      return { ...state, softSkillInfo: action.softSkillInfo };
+    case "SET_FIRST_ROLE":
+      return { ...state, firstRole: action.firstRole };
+    case "SET_SECOND_ROLE":
+      return { ...state, secondRole: action.secondRole };
     default:
       return state;
   }

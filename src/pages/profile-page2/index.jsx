@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 import { arrowRight, arrowLeft } from "../../assets";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import {
   ProfileForm,
   Header,
@@ -19,11 +20,7 @@ export const ProfilePage2 = (props) => {
   const [hardResults, setHardResults] = useState(false);
   const [softResultsSecond, setSoftResultsSecond] = useState(false);
   const [projects, setProjects] = useState(false);
-  function checkStyle() {
-    if (softSkills || hardSkills) {
-      return "heigth: content-fit";
-    }
-  }
+  const softSkillsResult = useSelector((state) => state.user.softSkillInfo);
   return (
     <>
       <div className={styles.container}>
@@ -52,6 +49,7 @@ export const ProfilePage2 = (props) => {
                 alt="error"
               />
               <ProfileForm
+                softSkillsResult={softSkillsResult}
                 hardSkills={hardSkills}
                 softSkills={softSkills}
                 softResults={softResults}
@@ -70,6 +68,13 @@ export const ProfilePage2 = (props) => {
                   setSoftResults(false);
                   setSoftResultsSecond(false);
                   setProjects(false);
+                }}
+                setSoftResults={() => {
+                  setSoftResults(!softResults);
+                  setProjects(false);
+                  setSoftResultsSecond(false);
+                  setHardskills(false);
+                  setSoftskills(false);
                 }}
               />
               {softSkills && (

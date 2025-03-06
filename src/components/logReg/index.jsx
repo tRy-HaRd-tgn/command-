@@ -1,11 +1,10 @@
 import styles from "./styles.module.scss";
 import { Button } from "../button";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Input } from "../input";
 import AuthService from "../../service/AuthService";
 import { useEffect } from "react";
-import { ModalIcon } from "../modalIcon";
 export const LogReg = ({ register, state, children, modal, setModal }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,9 +19,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
   const [ok, setOk] = useState(false);
   const [appointment, setAppointment] = useState("");
   const [studyDirection, setStudyDirection] = useState("");
-
   const setAuth = (value) => {
-    dispatch({ type: "SET_AUTH", isAuth: value });
+    dispatch({ type: "SET_AUTH", softSkillInfo: value });
   };
   useEffect(() => {
     setEmploymentStatus("");

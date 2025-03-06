@@ -8,7 +8,9 @@ import { useSelector } from "react-redux";
 import profile from "../../assets/profile.png";
 import AuthService from "../../service/AuthService";
 import UserService from "../../service/UserService";
+import { useDispatch } from "react-redux";
 export const ProfilePage1 = (props) => {
+  const dispatch = useDispatch();
   const name = useSelector((state) => state.user.name);
   const surname = useSelector((state) => state.user.surname);
   const patronymic = useSelector((state) => state.user.patronymic);
@@ -25,6 +27,18 @@ export const ProfilePage1 = (props) => {
   const [thirdName, setThirdName] = useState("");
   const [loading, setLoading] = useState(true);
   const [employmentStatus2, setEmploymentStatus] = useState("");
+  const saveSoftResults = (value) => {
+    dispatch({ type: "SET_SOFT_SKILL_INFO", softSkillInfo: value });
+  };
+  async function configureTest() {
+    try {
+      const responce = await UserService.getSoftSkillInfo();
+      console.log(responce.data);
+      saveSoftResults(responce.data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
   useEffect(() => {
     setFirstName(name);
     setSecondName(surname);
@@ -32,6 +46,7 @@ export const ProfilePage1 = (props) => {
     setUniversity(university2);
     setProfileImg(picture);
     setEmploymentStatus(employmentStatus);
+    configureTest();
     setTimeout(() => {
       setLoading(false);
     }, 100);

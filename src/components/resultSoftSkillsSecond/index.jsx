@@ -1,27 +1,29 @@
 import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
-import { ProgressBar } from "../progressBar";
+
+import { useSelector } from "react-redux";
 import { arrowLeft, arrowRight } from "../../assets";
+const obj = {
+  EXECUTOR: "исполнитель",
+  CHAIRMAN: "председатель",
+  SHAPER: "формирователь",
+  THINKER: "мыслитель",
+  SCOUT: "разведчик",
+  EVALUATING: "оценщик",
+  COLLECTIVIST: "коллективист",
+  FINISHER: "доводящий до конца",
+};
 export const ResultSoftSkillsSecond = ({
   props,
   setSoftResultsSecond,
   setSoftResults,
 }) => {
   const [role, setRole] = useState("1");
-  const [description, setDescription] = useState(
-    "  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus error reprehenderit, rem consequuntur magnam veritatis ducimus ad architecto, quibusdam voluptatem enim assumenda aliquid animi ipsa aperiam, repudiandae eaque ut libero."
-  );
-  const [strongStates, setStrongStates] = useState(
-    "  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus error reprehenderit, rem consequuntur magnam veritatis ducimus ad architecto, quibusdam voluptatem enim assumenda aliquid animi ipsa aperiam, repudiandae eaque ut libero."
-  );
-  const [weakStates, setWeakStates] = useState(
-    "  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus error reprehenderit, rem consequuntur magnam veritatis ducimus ad architecto, quibusdam voluptatem enim assumenda aliquid animi ipsa aperiam, repudiandae eaque ut libero."
-  );
-  const [teamContribution, setTeamContribution] = useState(
-    "  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus error reprehenderit, rem consequuntur magnam veritatis ducimus ad architecto, quibusdam voluptatem enim assumenda aliquid animi ipsa aperiam, repudiandae eaque ut libero."
-  );
-  const [percentage, setPercentage] = useState(1);
-  useEffect(() => {}, []);
+  const softSkills = useSelector((state) => state.user.softSkillInfo);
+  const primaryRole = useSelector((state) => state.user.secondRole);
+  useEffect(() => {
+    setRole(obj[primaryRole]);
+  }, []);
   return (
     <div
       style={{
@@ -49,27 +51,16 @@ export const ResultSoftSkillsSecond = ({
         <h2>Второстепенная роль в команде</h2>
         <div className={styles.role_container}>
           <h1 style={{ color: "orange" }}>{role}</h1>
-          <div style={{ width: "50%" }}>
-            <ProgressBar
-              style={{
-                height: "25px",
-                borderRadius: "20px",
-                position: "relative",
-              }}
-              active={true}
-              state={percentage}
-            />
-          </div>
         </div>
         <div className={styles.states}>
           <h2 className={styles.h2}>Краткое описание:</h2>
-          <p>{description}</p>
+          <p>{softSkills.softSkillSecondary.briefDescription}</p>
           <h2 className={styles.h2}>Сильные стороны:</h2>
-          <p>{strongStates}</p>
+          <p>{softSkills.softSkillSecondary.strengths}</p>
           <h2 className={styles.h2}>Слабые стороны:</h2>
-          <p>{weakStates}</p>
+          <p>{softSkills.softSkillSecondary.weaknesses}</p>
           <h2 className={styles.h2}>Вклад в комманду:</h2>
-          <p>{teamContribution}</p>
+          <p>{softSkills.softSkillSecondary.contribution}</p>
         </div>
       </div>
       <img
