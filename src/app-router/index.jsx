@@ -45,8 +45,6 @@ export const AppRouter = () => {
   };
   async function checkAuth() {
     try {
-      const response2 = await UserService.getSoftSkillInfo();
-      saveSoftResults(response2.data);
       const response = await UserService.getProfile();
       setName(response.data.name);
       setSurname(response.data.surname);
@@ -62,6 +60,12 @@ export const AppRouter = () => {
     } catch (e) {
       setAuth(false);
       console.log(e);
+    }
+    try {
+      const response2 = await UserService.getSoftSkillInfo();
+      saveSoftResults(response2.data);
+    } catch {
+      console.log("влад сосик");
     }
   }
   useEffect(() => {

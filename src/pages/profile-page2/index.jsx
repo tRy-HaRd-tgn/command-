@@ -1,8 +1,8 @@
 import styles from "./styles.module.scss";
-import { arrowRight, arrowLeft } from "../../assets";
-import { useState } from "react";
+import { arrowLeft } from "../../assets";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import {
   ProfileForm,
   Header,
@@ -21,6 +21,7 @@ export const ProfilePage2 = (props) => {
   const [softResultsSecond, setSoftResultsSecond] = useState(false);
   const [projects, setProjects] = useState(false);
   const softSkillsResult = useSelector((state) => state.user.softSkillInfo);
+
   return (
     <>
       <div className={styles.container}>

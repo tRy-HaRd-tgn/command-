@@ -46,7 +46,11 @@ export const ProfilePage1 = (props) => {
     setUniversity(university2);
     setProfileImg(picture);
     setEmploymentStatus(employmentStatus);
-    configureTest();
+    try {
+      configureTest();
+    } catch {
+      console.log("Влад сосик");
+    }
     setTimeout(() => {
       setLoading(false);
     }, 100);

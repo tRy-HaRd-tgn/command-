@@ -1,12 +1,12 @@
 import styles from "./styles.module.scss";
 import { data } from "./data";
-import { arrowRight } from "../../assets";
 import { TestComponent } from "../testComponent";
 import { useEffect, useState } from "react";
 import { ModalIcon } from "../modalIcon";
 import { text } from "./data";
 import TestService from "../../service/TestService";
 import { roles } from "./data";
+import { useDispatch } from "react-redux";
 
 export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
   const [modal, setModal] = useState(false);
@@ -20,6 +20,8 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
   const [collectivist, setCollectivist] = useState(0);
   const [finisher, setFinisher] = useState(0);
   const [vote, setVotes] = useState([0, 0, 0, 0, 0, 0, 0, 0]);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState();
 
   const [sendArray, setSendArray] = useState([
     executor,
@@ -111,17 +113,44 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
                 />
               </>
             ))}
+            {error ? (
+              <p style={{ color: "red" }} className={styles.msg}>
+                {error}
+              </p>
+            ) : (
+              <></>
+            )}
+            {success ? (
+              <p styles={{ color: "green" }} className={styles.msg}>
+                {success}
+              </p>
+            ) : (
+              <></>
+            )}
             <button
               onClick={async () => {
                 let obj = {};
                 let keys = Object.keys(roles);
+
                 for (let i = 0; i < sendArray.length; i++) {
                   obj[keys[i]] = sendArray[i];
                 }
-                try {
-                  const response = await TestService.belbinTest(obj);
-                } catch (e) {
-                  console.log(e);
+                const summery = vote.reduce((a, b) => a + b, 0);
+                if (summery === 70) {
+                  try {
+                    const response = await TestService.belbinTest(obj);
+                    setError("");
+                    setSuccess("тест пройден успешно");
+                    setTimeout(async () => {
+                      window.location.reload();
+                    }, 5000);
+                  } catch (e) {
+                    setError(e.response.data.message);
+                    setSuccess("");
+                  }
+                } else {
+                  setError("потрачены не все очки");
+                  setSuccess("");
                 }
               }}
               className={styles.formButtonBottom}
