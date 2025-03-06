@@ -11,6 +11,7 @@ import { Projects } from "./projectsForm";
 import { Checkbox } from "./checkBox";
 import { PasswordReset } from "./passwordReset";
 import { TestComponent } from "./testComponent";
+import { HardInput } from "./hardSkillInput";
 export {
   Header,
   ModalIcon,
@@ -25,4 +26,5 @@ export {
   Projects,
   PasswordReset,
   TestComponent,
+  HardInput,
 };

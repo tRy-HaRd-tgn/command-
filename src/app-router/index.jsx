@@ -43,6 +43,10 @@ export const AppRouter = () => {
   const setSecondRole = (value) => {
     dispatch({ type: "SET_SECOND_ROLE", secondRole: value });
   };
+  const setHardSkills = (value) => {
+    dispatch({ type: "SET_HARD_SKILL_INFO", hardSkillInfo: value });
+  };
+
   async function checkAuth() {
     try {
       const response = await UserService.getProfile();
@@ -64,8 +68,14 @@ export const AppRouter = () => {
     try {
       const response2 = await UserService.getSoftSkillInfo();
       saveSoftResults(response2.data);
-    } catch {
-      console.log("влад сосик");
+    } catch (e) {
+      console.log(e.response.data.message);
+    }
+    try {
+      const response3 = await UserService.getHardSkillInfo();
+      setHardSkills(response3.data);
+    } catch (e) {
+      console.log(e.response.data.message);
     }
   }
   useEffect(() => {

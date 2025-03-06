@@ -33,7 +33,6 @@ export const ProfilePage1 = (props) => {
   async function configureTest() {
     try {
       const responce = await UserService.getSoftSkillInfo();
-      console.log(responce.data);
       saveSoftResults(responce.data);
     } catch (e) {
       console.log(e);
@@ -48,8 +47,8 @@ export const ProfilePage1 = (props) => {
     setEmploymentStatus(employmentStatus);
     try {
       configureTest();
-    } catch {
-      console.log("Влад сосик");
+    } catch (e) {
+      console.log(e);
     }
     setTimeout(() => {
       setLoading(false);

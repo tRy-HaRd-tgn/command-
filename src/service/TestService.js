@@ -4,6 +4,7 @@ export default class TestService {
     return $api.post("tests/belbin", array);
   }
   static async hardSkillsTest(array) {
-    return $api.post("tests/hard-skill", { array });
+    return $api.post("tests/hard-skill", array);
   }
+  
 }

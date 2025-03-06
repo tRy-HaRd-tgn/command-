@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 2%;
+  padding-right: 2%;
 }
 * {
   transition: all 0.5s ease-out;
@@ -18,4 +19,20 @@
   font-weight: 500;
   font-size: calc(100vh / 40);
   margin-top: 2%;
+}
+.qustionsWrapper {
+  height: 90%;
+  padding-bottom: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.button {
+  width: 100%;
+  background-color: orange;
+  border: none;
+  height: 8%;
+  border-radius: 15px;
+  color: white;
+  font-size: 135%;
 }

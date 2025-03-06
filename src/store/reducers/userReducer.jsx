@@ -11,6 +11,7 @@ const defaultState = {
   softSkillInfo: undefined,
   firstRole: undefined,
   secondRole: undefined,
+  hardSkillInfo: undefined,
 };
 export const userReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -38,6 +39,8 @@ export const userReducer = (state = defaultState, action) => {
       return { ...state, firstRole: action.firstRole };
     case "SET_SECOND_ROLE":
       return { ...state, secondRole: action.secondRole };
+    case "SET_HARD_SKILL_INFO":
+      return { ...state, hardSkillInfo: action.hardSkillInfo };
     default:
       return state;
   }

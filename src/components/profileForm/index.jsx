@@ -16,7 +16,6 @@ export const ProfileForm = ({
   setSoftResults,
   softSkillsResult,
 }) => {
-  console.log(softSkillsResult);
   function styleDefiner(temp) {
     if (temp == 1) {
       if (!softSkills && !softResults && !softResultsSecond) {
@@ -167,25 +166,53 @@ export const ProfileForm = ({
             оценка Softskills
           </Button>
         )}
-        <Button
-          style={styleDefiner(0)}
-          onClick={setHardskills}
-          className={styles.form_button}
-        >
-          оценка Hardskills
-        </Button>
-        <Button
+        <>
+          <Button
+            style={styleDefiner(0)}
+            onClick={setHardskills}
+            className={styles.form_button}
+          >
+            оценка Hardskills
+          </Button>
+        </>
+        <div
           style={{
             height: "7%",
-            width: "contain",
-            textAlign: "center",
-            fontSize: "calc(125% / 1.2)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "90.5%",
           }}
-          className={styles.form_button}
-          onClick={(e) => router("/projectRequest")}
         >
-          предложить проект
-        </Button>
+          <Button
+            style={{
+              height: "100%",
+              width: "contain",
+              textAlign: "center",
+              fontSize: "calc(125% / 1.2)",
+              width: "45%",
+            }}
+            className={styles.form_button}
+            onClick={(e) => router("/projectRequest")}
+          >
+            предложить проект
+          </Button>
+          <Button
+            style={{
+              height: "100%",
+              width: "contain",
+              textAlign: "center",
+              fontSize: "calc(125% / 1.2)",
+              width: "45%",
+            }}
+            className={styles.form_button}
+            onClick={(e) => {
+              console.log("переход на новую страницу");
+            }}
+          >
+            мои проекты
+          </Button>
+        </div>
       </div>
     </div>
   );
