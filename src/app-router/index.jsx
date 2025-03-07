@@ -50,6 +50,7 @@ export const AppRouter = () => {
   async function checkAuth() {
     try {
       const response = await UserService.getProfile();
+      console.log(response);
       setName(response.data.name);
       setSurname(response.data.surname);
       setPatronymic(response.data.patronymic);
@@ -60,6 +61,7 @@ export const AppRouter = () => {
       setStudyDirection(response.data.studyDirection);
       setFirstRole(response.data.softSkill);
       setSecondRole(response.data.softSkillSecondary);
+      setHardSkills(response.data.hardSkills);
       setAuth(true);
     } catch (e) {
       setAuth(false);
@@ -68,12 +70,6 @@ export const AppRouter = () => {
     try {
       const response2 = await UserService.getSoftSkillInfo();
       saveSoftResults(response2.data);
-    } catch (e) {
-      console.log(e.response.data.message);
-    }
-    try {
-      const response3 = await UserService.getHardSkillInfo();
-      setHardSkills(response3.data);
     } catch (e) {
       console.log(e.response.data.message);
     }

@@ -1,7 +1,6 @@
 import styles from "./styles.module.scss";
 import { Header } from "../../components";
 import { useEffect } from "react";
-import 
 
 export const ProjectPage = (props) => {
   useEffect(() => {

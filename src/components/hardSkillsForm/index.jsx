@@ -52,33 +52,41 @@ export const HardSkillsForm = (props) => {
           ))}
           {error ? <p className={styles.message}>{error}</p> : <></>}
           {success ? <p className={styles.message}>{success}</p> : <></>}
-          <button
-            onClick={async () => {
+        </div>
+        <button
+          onClick={async () => {
+            try {
+              let obj = {};
+              let keys = Object.keys(hardSkills);
+
               try {
-                let obj = {};
-                let keys = Object.keys(hardSkills);
-
                 for (let i = 0; i < values.length; i++) {
-                  obj[keys[i]] = Number(values[i]);
+                  if (values[i] != null) {
+                    obj[keys[i]] = Number(values[i]);
+                  } else {
+                    obj[keys[i]] = 0;
+                  }
                 }
-
-                const response = await TestService.hardSkillsTest(obj);
-                setSuccess("изменения успешно сохранены");
-                setError(false);
-                setTimeout(() => {
-                  window.location.reload();
-                }, 5000);
               } catch (e) {
-                setError(e.response.data.message);
-                setSuccess(false);
                 console.log(e);
               }
-            }}
-            className={styles.button}
-          >
-            Сохранить
-          </button>
-        </div>
+
+              const response = await TestService.hardSkillsTest(obj);
+              setSuccess("изменения успешно сохранены");
+              setError(false);
+              setTimeout(() => {
+                window.location.reload();
+              }, 5000);
+            } catch (e) {
+              setError(e.response.data.message);
+              setSuccess(false);
+              console.log(e);
+            }
+          }}
+          className={styles.button}
+        >
+          Сохранить
+        </button>
       </div>
       <img
         style={{

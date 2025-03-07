@@ -21,7 +21,7 @@
   margin-top: 2%;
 }
 .qustionsWrapper {
-  height: 90%;
+  height: calc(100% - 100px - 5% - 8%);
   padding-bottom: 3%;
   display: flex;
   flex-direction: column;
@@ -35,9 +35,10 @@
   border-radius: 15px;
   color: white;
   font-size: 135%;
+  margin-bottom: 1%;
 }
 .message {
-  height: 5%;
+  height: 8%;
   color: black;
   overflow-y: scroll;
 }
