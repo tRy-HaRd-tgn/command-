@@ -50,8 +50,8 @@ export const HardSkillsForm = (props) => {
               <p>{value}</p>
             </div>
           ))}
-          {error ? <p>{error}</p> : <></>}
-          {success ? <p>{success}</p> : <></>}
+          {error ? <p className={styles.message}>{error}</p> : <></>}
+          {success ? <p className={styles.message}>{success}</p> : <></>}
           <button
             onClick={async () => {
               try {

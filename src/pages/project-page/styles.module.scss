@@ -17,4 +17,11 @@
   height: 95%;
   width: 80%;
   overflow-y: scroll;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.projectHeader {
+  width: 100%;
 }
