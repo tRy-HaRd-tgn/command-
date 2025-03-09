@@ -50,7 +50,6 @@ export const AppRouter = () => {
   async function checkAuth() {
     try {
       const response = await UserService.getProfile();
-      console.log(response);
       setName(response.data.name);
       setSurname(response.data.surname);
       setPatronymic(response.data.patronymic);

@@ -90,10 +90,12 @@
   font-size: calc(100vh / 35);
   font-family: "Istok Web", serif;
   bottom: 9%;
-  width: 35%;
-  height: 100%;
+  width: fit-content;
+  height: fit-content !important;
   background-color: orange;
   border: 1px solid orange;
+  padding-left: 1%;
+  padding-right: 1%;
   border-radius: 10px;
   color: white;
   cursor: pointer;

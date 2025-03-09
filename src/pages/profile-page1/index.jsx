@@ -212,7 +212,11 @@ export const ProfilePage1 = (props) => {
                       сохранить
                     </Button>
                     <Button
-                      style={{ marginLeft: "0" }}
+                      style={{
+                        marginLeft: "0",
+                        paddingLeft: "5%",
+                        paddingRight: "5%",
+                      }}
                       className={styles.form_button}
                       onClick={() => {
                         const responce = AuthService.logout();

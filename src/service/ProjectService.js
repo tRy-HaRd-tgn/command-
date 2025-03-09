@@ -8,4 +8,7 @@ export default class ProjectService {
     formData.append("tasks", JSON.stringify(array));
     return $api.post("projects/create", formData);
   }
+  static async getProjects() {
+    return $api.get("projects");
+  }
 }
