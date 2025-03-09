@@ -5,4 +5,5 @@ import square from "./square.svg";
 import arrowRight from "./arrowRight.svg";
 import arrowLeft from "./arrowLeft.svg";
 import putin from "./putin.jpg";
-export { square, brain, phone, img, arrowRight, arrowLeft, putin };
+import download from "./download.svg";
+export { download, square, brain, phone, img, arrowRight, arrowLeft, putin };

@@ -13,6 +13,7 @@ import { PasswordReset } from "./passwordReset";
 import { TestComponent } from "./testComponent";
 import { HardInput } from "./hardSkillInput";
 import { ProjectComp } from "./projectComponent";
+import { Task } from "./taskComponent";
 export {
   Header,
   ModalIcon,
@@ -29,4 +30,5 @@ export {
   TestComponent,
   HardInput,
   ProjectComp,
+  Task,
 };

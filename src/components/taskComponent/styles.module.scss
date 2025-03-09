@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+}
+.wrapper:not(:last-child) {
+  margin-bottom: 5%;
+}
+.index {
+  width: 2%;
+  color: orange;
+  border-radius: 15px;
+  border: 1px solid black;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin-right: 5%;
+}
+.input {
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding-left: 2%;
+  font-size: 150%;
+}
+.button {
+  border-radius: 15px;
+  margin-left: 5%;
+  border: none;
+  background-color: orange;
+  color: white;
+  width: 9%;
+  cursor: pointer;
+}
