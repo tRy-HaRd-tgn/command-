@@ -13,6 +13,7 @@ export const ProjectRequestPage = (props) => {
   const [array, setArray] = useState([]);
   const [result, setResult] = useState();
   const [error, setError] = useState();
+  const [responseFile, setResponseFile] = useState();
   return (
     <div className={styles.container}>
       <Header />
@@ -84,7 +85,7 @@ export const ProjectRequestPage = (props) => {
                 onClick={async () => {
                   try {
                     const response = await ProjectService.createProject(
-                      img,
+                      responseFile,
                       name,
                       description,
                       array
@@ -113,6 +114,7 @@ export const ProjectRequestPage = (props) => {
         style={{ display: "none" }}
         onChange={(e) => {
           const file = e.target.files[0];
+          setResponseFile(file);
           setImg(URL.createObjectURL(file));
         }}
       />

@@ -1,8 +1,8 @@
 import $api from "../http";
 export default class ProjectService {
-  static async createProject(file, name, description, array) {
+  static async createProject(img, name, description, array) {
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("file", img);
     formData.append("name", name);
     formData.append("description", description);
     formData.append("tasks", JSON.stringify(array));

@@ -88,7 +88,7 @@ export const ProfilePage1 = (props) => {
                       console.log(e);
                     }
                   }}
-                ></input>
+                />
               </div>
               <div
                 style={{
