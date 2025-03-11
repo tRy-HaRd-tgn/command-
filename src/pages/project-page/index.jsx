@@ -17,8 +17,8 @@ export const ProjectPage = (props) => {
     <div className={styles.container}>
       <Header />
       <div className={styles.projectWrapper}>
+        <h2 className={styles.projectHeader}>Витрина проектов</h2>
         <div className={styles.projects}>
-          <h2 className={styles.projectHeader}>Витрина проектов</h2>
           <div className={styles.content}>
             {projects
               ? projects?.map((value, index) => (

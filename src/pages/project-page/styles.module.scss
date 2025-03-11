@@ -14,13 +14,14 @@
 }
 .projects {
   height: 95%;
-  width: 80%;
+  width: 90%;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
 .projectHeader {
-  width: 100%;
+  width: 90%;
+  text-align: left;
 }
 .project {
   margin-bottom: 5%;
