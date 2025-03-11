@@ -13,7 +13,7 @@ export const Header = ({ setProjects, projects, active, setActive, mode }) => {
         <img className={styles.header__logo__img} src={brain} alt="error" />
         <p className={styles.header__logo__p}>Команда+</p>
       </div>
-      <div style={{ width: "90%" }}>
+      <div className={styles.leftSide} style={{ width: "61%" }}>
         <ul className={styles.header__list}>
           {auth ? (
             <li

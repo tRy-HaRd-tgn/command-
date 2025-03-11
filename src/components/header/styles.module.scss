@@ -32,6 +32,7 @@
 .header__list__item__p {
   font-family: "Istok Web", serif;
   font-weight: 700;
+  text-wrap: nowrap;
 }
 .header__list__item__p:hover {
   color: orange;
@@ -47,4 +48,16 @@
 .header__list__item__button:hover {
   color: orange;
   border-color: orange;
+}
+@media screen and (max-width: 830px) {
+  .header__logo {
+    width: 25%;
+  }
+  .header__logo__p {
+    font-size: 80%;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
 }

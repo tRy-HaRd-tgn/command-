@@ -82,6 +82,7 @@ export const ProjectRequestPage = (props) => {
             <div className={styles.buttonWrapper}>
               <button
                 className={styles.button}
+                disabled={result}
                 onClick={async () => {
                   try {
                     const response = await ProjectService.createProject(
@@ -92,6 +93,9 @@ export const ProjectRequestPage = (props) => {
                     );
                     setResult("Добавлено");
                     setError();
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 5000);
                   } catch (e) {
                     setResult();
                     setError(e.response.data.message);

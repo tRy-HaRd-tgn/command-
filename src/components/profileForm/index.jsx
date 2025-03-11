@@ -207,7 +207,7 @@ export const ProfileForm = ({
             }}
             className={styles.form_button}
             onClick={(e) => {
-              console.log("переход на новую страницу");
+              router("/userProjects");
             }}
           >
             мои проекты

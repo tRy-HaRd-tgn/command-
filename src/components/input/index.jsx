@@ -12,7 +12,7 @@ export const Input = ({
     <input
       style={style}
       placeholder={placeholder}
-      className={styles.className}
+      className={styles.input}
       type={type}
       value={value}
       onChange={onChange}

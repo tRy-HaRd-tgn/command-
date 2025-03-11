@@ -10,3 +10,18 @@
   align-items: center;
   justify-content: center;
 }
+@media only screen and (max-width: 1600px) {
+  .input::placeholder {
+    font-size: 70% !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .input::placeholder {
+    font-size: 50% !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .input::placeholder {
+    font-size: 40% !important;
+  }
+}

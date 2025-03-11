@@ -170,7 +170,7 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
                 border: "1px solid black",
                 borderRadius: "10px",
               }}
-              placeholder={"Должность/академическая группа"}
+              placeholder={"Должность/академическая группа/класс"}
               value={appointment}
               onChange={(e) => setAppointment(e.target.value)}
             />

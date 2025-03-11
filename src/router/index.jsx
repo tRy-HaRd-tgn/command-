@@ -5,6 +5,7 @@ import { Confirmation } from "../pages/confirmation-page";
 import { PasswordReset } from "../pages/passwordReset";
 import { ProjectPage } from "../pages/project-page";
 import { ProjectRequestPage } from "../pages/projectRequest/index";
+import { UserProjects } from "../pages/userProjects";
 export const privateRoutes = [
   { path: "*", component: <ProfilePage1 />, exact: true },
   { path: "/", component: <ProfilePage1 />, exact: true },
@@ -12,6 +13,7 @@ export const privateRoutes = [
   { path: "/profile2", component: <ProfilePage2 />, exact: true },
   { path: "/projects", component: <ProjectPage />, exact: true },
   { path: "/projectRequest", component: <ProjectRequestPage />, exact: true },
+  { path: "/userProjects", component: <UserProjects />, exact: true },
 ];
 export const publicRoutes = [
   { path: "/", component: <StartPage />, exact: true },
@@ -20,6 +22,7 @@ export const publicRoutes = [
     path: `/auth/new-verification`,
     component: <Confirmation />,
   },
+
   {
     path: `/auth/new-password`,
     component: <PasswordReset />,

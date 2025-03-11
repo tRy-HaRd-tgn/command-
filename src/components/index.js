@@ -14,8 +14,10 @@ import { TestComponent } from "./testComponent";
 import { HardInput } from "./hardSkillInput";
 import { ProjectComp } from "./projectComponent";
 import { Task } from "./taskComponent";
+import { SecondProjectComponent } from "./secondProjectComponent";
 export {
   Header,
+  SecondProjectComponent,
   ModalIcon,
   Button,
   Checkbox,

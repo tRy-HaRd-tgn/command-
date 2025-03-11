@@ -3,7 +3,6 @@ import { publicRoutes } from "../router";
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import UserService from "../service/UserService";
-import ProjectService from "../service/ProjectService";
 import { useEffect } from "react";
 export const AppRouter = () => {
   const dispatch = useDispatch();
@@ -47,9 +46,7 @@ export const AppRouter = () => {
   const setHardSkills = (value) => {
     dispatch({ type: "SET_HARD_SKILL_INFO", hardSkillInfo: value });
   };
-  const setProjects = (value) => {
-    dispatch({ type: "SET_PROJECTS", projects: value });
-  };
+
   async function checkAuth() {
     try {
       const response = await UserService.getProfile();
@@ -72,12 +69,6 @@ export const AppRouter = () => {
     try {
       const response2 = await UserService.getSoftSkillInfo();
       saveSoftResults(response2.data);
-    } catch (e) {
-      console.log(e.response.data.message);
-    }
-    try {
-      const response = await ProjectService.getProjects();
-      setProjects(response.data);
     } catch (e) {
       console.log(e.response.data.message);
     }

@@ -1,0 +1,62 @@
+.content {
+  width: 30%;
+  height: auto;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  margin-bottom: 5%;
+}
+.content:not(:nth-child(3n)) {
+  margin-right: 4%;
+}
+
+.result {
+  border: 1px solid black;
+  border-radius: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.img {
+  margin-top: 5%;
+  width: 90%;
+  height: 50%;
+  max-height: 40vh;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+.name {
+  font-family: "Istok Web", serif;
+  width: 100%;
+  text-align: left;
+  padding-left: 10%;
+  padding-top: 5%;
+  font-size: 120%;
+}
+.status {
+  font-family: "Istok Web", serif;
+  width: 100%;
+  text-align: left;
+  padding-left: 10%;
+  padding-top: 5%;
+  font-size: 120%;
+}
+@media screen and (max-width: 1000px) {
+  .content {
+    width: 47%;
+    height: auto;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+  }
+  .content:not(:nth-child(2n)) {
+    margin-right: 5% !important;
+  }
+  .content:nth-child(2n) {
+    margin-right: 0% !important;
+  }
+}

@@ -1,10 +1,18 @@
 import styles from "./styles.module.scss";
 import { Header } from "../../components";
-import { useSelector } from "react-redux";
-
+import ProjectService from "../../service/ProjectService";
+import { useEffect, useState } from "react";
 export const ProjectPage = (props) => {
-  const projects = useSelector((state) => state.projects.projects);
-  console.log(projects);
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    try {
+      const response = ProjectService.getProjects().then((res) =>
+        setProjects(res.data)
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
   return (
     <div className={styles.container}>
       <Header />
@@ -22,9 +30,13 @@ export const ProjectPage = (props) => {
                         alt="error"
                       />
                     </div>
-                    <p className={styles.name}>название: {value.name}</p>
+                    <p className={styles.name}>
+                      <span className={styles.span}>Название: </span>
+                      {value.name}
+                    </p>
                     <p className={styles.description}>
-                      описание:{value.description}
+                      <span className={styles.span}>Описание: </span>
+                      {value.description}
                     </p>
                   </div>
                 ))

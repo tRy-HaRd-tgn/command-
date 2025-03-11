@@ -1,0 +1,25 @@
+.content {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contentArray {
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: none;
+}
+.name {
+  font-family: "Istok Web", serif;
+}
+.projectHeader {
+  width: 90%;
+  text-align: left;
+}

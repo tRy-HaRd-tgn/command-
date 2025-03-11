@@ -35,4 +35,7 @@ export default class UserService {
   static async getHardSkillInfo(array) {
     return $api.get("users/profile/hard-skills", array);
   }
+  static async getUserProjects() {
+    return $api.get("users/profile/projects");
+  }
 }
