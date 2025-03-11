@@ -170,7 +170,7 @@ export const ProfileForm = ({
           <Button
             style={styleDefiner(0)}
             onClick={setHardskills}
-            className={styles.form_button}
+            className={styles.form_button && styles.hover}
           >
             оценка Hardskills
           </Button>

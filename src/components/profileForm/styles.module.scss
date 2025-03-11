@@ -26,7 +26,19 @@
   color: white;
   cursor: pointer;
 }
-
+.form_button:hover {
+  background-color: grey !important;
+  border: 1px solid white;
+}
+.hover {
+  border-radius: 15px;
+  border: none;
+  font-size: 150%;
+  cursor: pointer;
+}
+.hover:hover {
+  background-color: orange !important;
+}
 .form_buttonHalf {
   height: 100% !important;
   border-radius: 15px;
@@ -37,6 +49,7 @@
 }
 .form_buttonHalf:hover {
   cursor: pointer;
+  background-color: orange !important;
 }
 .buttonsWrapper {
   width: 90%;
