@@ -6,4 +6,17 @@ import arrowRight from "./arrowRight.svg";
 import arrowLeft from "./arrowLeft.svg";
 import putin from "./putin.jpg";
 import download from "./download.svg";
-export { download, square, brain, phone, img, arrowRight, arrowLeft, putin };
+import phone2 from "./phone.png";
+import telegram from "./telegram.png";
+export {
+  download,
+  square,
+  brain,
+  phone,
+  img,
+  arrowRight,
+  arrowLeft,
+  putin,
+  phone2,
+  telegram,
+};

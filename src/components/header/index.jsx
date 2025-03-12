@@ -22,13 +22,18 @@ export const Header = ({ setProjects, projects, active, setActive, mode }) => {
                 router("/projects");
               }}
             >
-              <p className={styles.header__list__item__p}>витрина проектов</p>
+              <p className={styles.header__list__item__p}>Витрина проектов</p>
             </li>
           ) : (
             <></>
           )}
-          <li className={styles.header__list__item}>
-            <p className={styles.header__list__item__p}>контакты</p>
+          <li
+            className={styles.header__list__item}
+            onClick={() => {
+              router("/contact");
+            }}
+          >
+            <p className={styles.header__list__item__p}>Контакты</p>
           </li>
           {mode == 1 ? (
             <li className={styles.header__list__item}>

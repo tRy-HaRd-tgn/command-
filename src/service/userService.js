@@ -38,4 +38,10 @@ export default class UserService {
   static async getUserProjects() {
     return $api.get("users/profile/projects");
   }
+  static async updateContacts(telegram, phoneNumber) {
+    return $api.patch("users/profile/contacts", {
+      telegram,
+      phoneNumber,
+    });
+  }
 }
