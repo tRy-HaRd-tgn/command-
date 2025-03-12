@@ -30,7 +30,7 @@ export default class UserService {
     });
   }
   static async getSoftSkillInfo() {
-    return $api.get("users/profile/soft-skill-info");
+    return $api.get("users/profile/tests/soft-skill-info");
   }
   static async getHardSkillInfo(array) {
     return $api.get("users/profile/hard-skills", array);
