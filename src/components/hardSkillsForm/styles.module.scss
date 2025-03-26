@@ -1,0 +1,44 @@
+.container {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid orange;
+  margin-left: 1%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+* {
+  transition: all 0.5s ease-out;
+}
+.h2 {
+  font-family: "Istok Web", serif;
+  color: rgb(144, 144, 144);
+  line-height: 1.2;
+  font-weight: 500;
+  font-size: calc(100vh / 40);
+  margin-top: 2%;
+}
+.qustionsWrapper {
+  height: calc(100% - 100px - 5% - 8%);
+  padding-bottom: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.button {
+  width: 100%;
+  background-color: orange;
+  border: none;
+  height: 8%;
+  border-radius: 15px;
+  color: white;
+  font-size: 135%;
+  margin-bottom: 1%;
+}
+.message {
+  height: 8%;
+  color: black;
+  overflow-y: scroll;
+}

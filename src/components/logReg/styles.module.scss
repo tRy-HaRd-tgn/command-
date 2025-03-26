@@ -1,0 +1,92 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-evenly;
+  border: 5px orange solid;
+  border-radius: 10px;
+}
+.form_p {
+  font-size: 325%;
+  font-family: "Istok Web", serif;
+  font-weight: 700;
+}
+.form_checkboxes {
+  display: flex;
+  justify-content: center;
+  width: 84%;
+  height: 5%;
+  align-items: center;
+}
+.form_checkboxes__input {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  appearance: none;
+  width: 4vw;
+  height: 4vw;
+  border: 1px solid grey;
+  border-radius: 15px;
+  margin-right: 1%;
+  position: relative;
+}
+
+.form_checkboxes__input::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  transition: 500ms;
+  background-image: url("../../assets/square.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.form_checkboxes__input:checked::after {
+  width: 100%;
+  height: 100%;
+  transition: 500ms;
+}
+
+.form_checkboxes_description {
+  font-size: 300%;
+  font-family: "Istok Web", serif;
+  margin-right: 5%;
+}
+.form_button {
+  font-size: 225%;
+  font-family: "Istok Web", serif;
+  width: 35%;
+  height: 7%;
+  background-color: orange;
+  border: 1px solid grey;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.form_description {
+  font-family: "Istok Web", serif;
+  text-align: center;
+  font-size: 225%;
+  width: 100%;
+}
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 300%;
+  width: 90%;
+  font-family: "Istok Web", serif;
+  height: 10%;
+}
+.secError {
+  font-size: 300%;
+  width: 90%;
+  font-family: "Istok Web", serif;
+  height: 10%;
+  overflow-y: scroll;
+}
+.form_input::placeholder {
+  font-size: large;
+}

@@ -1,0 +1,38 @@
+* {
+  font-family: "Istok Web", serif;
+}
+h1 {
+  margin: 0px;
+}
+.container {
+  height: 95%;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid orange;
+  margin-left: 1%;
+  display: flex;
+  transform: border 0.5s ease-in-out;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding-left: 4%;
+  padding-right: 8%;
+  margin-top: 5%;
+  padding-bottom: 1.5%;
+  overflow-y: scroll;
+}
+.role_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.states {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+}
+.h2 {
+  font-size: 15px;
+}
