@@ -17,5 +17,9 @@ export default defineConfig({
     watch: {
       usePolling: true,
     },
+    allowedHosts: [
+      "commandplus-frontend-5gddei-a786c7-95-174-103-115.traefik.me",
+      "localhost",
+    ],
   },
 });
