@@ -5,6 +5,9 @@ export const APLICATION_URL = import.meta.env.VITE_APLICATION_URL;
 const $api = axios.create({
   withCredentials: true,
   baseURL: API_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 $api.interceptors.response.use(
   (config) => {
