@@ -19,6 +19,8 @@ export default defineConfig({
     },
     allowedHosts: [
       "commandplus-frontend-5gddei-a786c7-95-174-103-115.traefik.me",
+      "sitetrialbox.ru",
+      "team-plus.tech",
       "localhost",
     ],
   },
