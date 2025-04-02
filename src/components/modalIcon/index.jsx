@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 export const ModalIcon = ({ state, setState, active, children, setActive }) => {
-  const swapStates = () => {
+  const swapStates = (e) => {
+    e.stopPropagation();
     setState(false);
     setActive(false);
   };
@@ -15,12 +16,14 @@ export const ModalIcon = ({ state, setState, active, children, setActive }) => {
     <>
       <div
         className={active ? styles.modal_active : styles.modal}
-        onClick={swapStates}
+        onMouseDown={swapStates}
       >
         <div
           className={classnames()}
-          styles={state ? { width: "70vh", height: "150vh" } : {}}
-          onClick={(e) => e.stopPropagation()}
+          styles={
+            state ? { width: "70vh", height: "150vh", zIndex: "9999" } : {}
+          }
+          onMouseDown={(e) => e.stopPropagation()}
         >
           {children}
         </div>
