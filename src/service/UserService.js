@@ -6,13 +6,9 @@ export default class UserService {
   static async updateAvatar(file) {
     const formData = new FormData();
     formData.append("file", file);
-    return $api.patch(
-      "users/profile/avatar",
-
-      formData,
-
-      { headers: { "Content-Type": "multipart/form-data" } }
-    );
+    return $api.patch("users/profile/avatar", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
   }
   static async updateProfile(
     surname,
