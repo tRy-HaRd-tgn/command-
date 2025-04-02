@@ -88,7 +88,8 @@ export const HardSkillsForm = (props) => {
           Сохранить
         </button>
       </div>
-      <img
+      {/*
+     <img
         style={{
           cursor: "pointer",
           marginLeft: "1%",
@@ -97,7 +98,7 @@ export const HardSkillsForm = (props) => {
         }}
         src={arrowRight}
         alt="error"
-      />
+      />*/}
     </div>
   );
 };
