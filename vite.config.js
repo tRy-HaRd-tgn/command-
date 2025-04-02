@@ -1,29 +1,14 @@
-import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import autoprefixer from "autoprefixer";
-import cssnano from "cssnano";
+import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   css: {
-    postcss: {
-      plugins: [
-        autoprefixer({
-          overrideBrowserslist: ["last 2 versions"],
-          grid: true,
-        }),
-        cssnano({
-          preset: [
-            "default",
-            {
-              autoprefixer: false, // Оставляем префиксы нетронутыми
-              discardUnused: false, // Не удаляем неиспользуемые стили
-              reduceIdents: false, // Не сокращаем идентификаторы
-            },
-          ],
-        }),
-      ],
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler", // or "modern"
+      },
     },
   },
   crossDomain: true,
