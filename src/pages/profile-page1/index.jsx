@@ -85,7 +85,7 @@ export const ProfilePage1 = (props) => {
                       const responce = UserService.updateAvatar(file);
                       setProfileImg(URL.createObjectURL(file));
                     } catch (e) {
-                      console.log(e);
+                      console.log(e.responce.data.message);
                     }
                   }}
                 />
