@@ -24,7 +24,6 @@ export const publicRoutes = [
     path: `/auth/new-verification`,
     component: <Confirmation />,
   },
-
   {
     path: `/auth/new-password`,
     component: <PasswordReset />,
