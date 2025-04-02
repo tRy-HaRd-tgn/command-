@@ -36,7 +36,8 @@ export const HardInput = ({ props, key, values, setValues, index }) => {
       key={key}
       value={values[index]}
       onChange={handleChange}
-      type={"number"}
+      type={"text"}
+      inputmode="numeric"
     />
   );
 };
