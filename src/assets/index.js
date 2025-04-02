@@ -7,8 +7,10 @@ import arrowLeft from "./arrowLeft.svg";
 import download from "./download.svg";
 import phone2 from "./phone.png";
 import telegram from "./telegram.png";
+import eye from "./eye.svg";
 export {
   download,
+  eye,
   square,
   brain,
   phone,

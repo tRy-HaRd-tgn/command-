@@ -79,9 +79,10 @@ export const ProfileForm = ({
     <div className={styles.container__content__info__flex}>
       <div className={styles.container__content__info__flex__inputs}>
         <Input
+          form={true}
           style={{
-            height: "6%",
-            width: "88%",
+            height: "100%",
+            width: "90%",
             borderRadius: "10px",
             paddingLeft: "2%",
             fontSize: "135%",
@@ -92,9 +93,10 @@ export const ProfileForm = ({
           onChange={(e) => setGroup(e.target.value)}
         />
         <Input
+          form={true}
           style={{
-            height: "6%",
-            width: "88%",
+            height: "100%",
+            width: "90%",
             borderRadius: "10px",
             paddingLeft: "2%",
             fontSize: "135%",

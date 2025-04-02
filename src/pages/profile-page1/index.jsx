@@ -99,8 +99,10 @@ export const ProfilePage1 = (props) => {
               >
                 <form className={styles.profileInfo__form} action="">
                   <Input
+                    form={true}
                     style={{
-                      height: "6%",
+                      width: "100%",
+                      height: "100%",
                       fontSize: "135%",
                       borderRadius: "10px",
                       border: "1px solid black",
@@ -112,8 +114,10 @@ export const ProfilePage1 = (props) => {
                     onChange={(e) => setSecondName(e.target.value)}
                   />
                   <Input
+                    form={true}
                     style={{
-                      height: "6%",
+                      width: "100%",
+                      height: "100%",
                       fontSize: "135%",
                       borderRadius: "10px",
                       border: "1px solid black",
@@ -126,8 +130,10 @@ export const ProfilePage1 = (props) => {
                   />
 
                   <Input
+                    form={true}
                     style={{
-                      height: "6%",
+                      width: "100%",
+                      height: "100%",
                       fontSize: "135%",
                       borderRadius: "10px",
                       border: "1px solid black",
@@ -167,8 +173,10 @@ export const ProfilePage1 = (props) => {
                     <p className={styles.form_checkboxes_description}>Учусь</p>
                   </div>
                   <Input
+                    form={true}
                     style={{
-                      height: "6%",
+                      width: "100%",
+                      height: "100%",
                       fontSize: "135%",
                       borderRadius: "10px",
                       border: "1px solid black",

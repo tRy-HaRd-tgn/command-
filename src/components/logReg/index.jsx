@@ -38,8 +38,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
           <>
             <Input
               style={{
-                height: "8%",
-                width: "80%",
+                height: "150%",
+                width: "100%",
                 fontSize: "335%",
                 paddingLeft: "2%",
                 border: "1px solid black",
@@ -52,8 +52,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             />
             <Input
               style={{
-                height: "8%",
-                width: "80%",
+                height: "150%",
+                width: "100%",
                 paddingLeft: "2%",
                 fontSize: "335%",
                 border: "1px solid black",
@@ -124,8 +124,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             <p className={styles.form_p}>регистрация</p>
             <Input
               style={{
-                height: "8%",
-                width: "80%",
+                height: "100%",
+                width: "100%",
                 paddingLeft: "2%",
                 fontSize: "335%",
                 border: "1px solid black",
@@ -137,8 +137,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             />
             <Input
               style={{
-                height: "8%",
-                width: "80%",
+                height: "100%",
+                width: "100%",
                 paddingLeft: "2%",
                 fontSize: "335%",
                 border: "1px solid black",
@@ -150,8 +150,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             />
             <Input
               style={{
-                height: "8%",
-                width: "80%",
+                height: "100%",
+                width: "100%",
                 paddingLeft: "2%",
                 fontSize: "335%",
                 border: "1px solid black",
@@ -163,8 +163,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             />
             <Input
               style={{
-                height: "8%",
-                width: "80%",
+                height: "100%",
+                width: "100%",
                 paddingLeft: "2%",
                 fontSize: "335%",
                 border: "1px solid black",
@@ -176,8 +176,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             />
             <Input
               style={{
-                height: "8%",
-                width: "80%",
+                height: "100%",
+                width: "100%",
                 paddingLeft: "2%",
                 fontSize: "335%",
                 border: "1px solid black",
@@ -214,8 +214,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             <Input
               className={styles.form_input}
               style={{
-                height: "8%",
-                width: "80%",
+                height: "100%",
+                width: "100%",
                 paddingLeft: "2%",
                 fontSize: "335%",
                 border: "1px solid black",
@@ -227,8 +227,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             />
             <Input
               style={{
-                height: "8%",
-                width: "80%",
+                height: "100%",
+                width: "100%",
                 paddingLeft: "2%",
                 fontSize: "335%",
                 border: "1px solid orange",
@@ -241,8 +241,8 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             />
             <Input
               style={{
-                height: "8%",
-                width: "80%",
+                height: "100%",
+                width: "100%",
                 paddingLeft: "2%",
                 fontSize: "335%",
                 border: "1px solid orange",
@@ -250,6 +250,7 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
               }}
               placeholder={"Пароль"}
               type="password"
+              eye={true}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

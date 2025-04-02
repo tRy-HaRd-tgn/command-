@@ -1,8 +1,16 @@
+.container {
+  width: 80%;
+  height: 5%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .form_input {
   padding-left: 2%;
   font-family: "Istok Web", serif;
-  width: 80%;
-  height: 12%;
+  width: 100% !important;
+  height: 100% !important;
   border: 1px solid grey;
   border-radius: 10px;
   text-align: center;
@@ -10,18 +18,31 @@
   align-items: center;
   justify-content: center;
 }
+
 @media only screen and (max-width: 1600px) {
   .input::placeholder {
-    font-size: 70% !important;
+    font-size: 80% !important;
   }
 }
 @media only screen and (max-width: 1200px) {
   .input::placeholder {
-    font-size: 50% !important;
+    font-size: 65% !important;
   }
 }
 @media only screen and (max-width: 800px) {
   .input::placeholder {
-    font-size: 40% !important;
+    font-size: 50% !important;
   }
+}
+.eye {
+  z-index: 99999;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 25px);
+  cursor: pointer;
 }
