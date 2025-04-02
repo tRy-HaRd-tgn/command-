@@ -160,7 +160,7 @@ export const ProfileForm = ({
         ) : (
           <Button
             style={styleDefiner(1)}
-            className={styles.form_button}
+            className={styles.form_button && styles.hover}
             onClick={setSoftskills}
           >
             оценка Softskills
