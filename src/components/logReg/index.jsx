@@ -63,6 +63,9 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
     } catch (e) {
       console.log(e);
       setSecError(e.response.data.message);
+      if (e.response.status === 409) {
+        setSecError("Данная почта уже зарегистрирована");
+      }
       setOk(false);
     }
   };
@@ -101,6 +104,7 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
                 border: "1px solid black",
                 borderRadius: "10px",
               }}
+              eye={true}
               className={styles.form_input}
               placeholder={"пароль"}
               type="password"
@@ -398,7 +402,7 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
             {secError ? <p className={styles.secError}>{secError}</p> : <></>}
             {ok ? (
               <p className={styles.error}>
-                Подтвердите создание в почтовом ящике
+                Для активации аккаунта подтвердите почту
               </p>
             ) : (
               <></>
