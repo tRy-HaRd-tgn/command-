@@ -61,7 +61,7 @@ export const HardSkillsForm = (props) => {
 
               try {
                 for (let i = 0; i < values.length; i++) {
-                  if (values[i] != null) {
+                  if (values[i] !== null) {
                     obj[keys[i]] = Number(values[i]);
                   } else {
                     obj[keys[i]] = 0;
