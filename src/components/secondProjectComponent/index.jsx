@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import profile from "../../assets/profile.png";
 export const SecondProjectComponent = ({ props, status, img, name }) => {
   function checkStatus(status) {
     switch (status) {
@@ -30,7 +31,7 @@ export const SecondProjectComponent = ({ props, status, img, name }) => {
   }
   return (
     <div className={styles.content}>
-      <img className={styles.img} src={img} alt="всё хорошо" />
+      <img className={styles.img} src={img ? img : profile} alt="всё хорошо" />
       <p className={styles.name}>
         <span>Название: </span>
         {name}
