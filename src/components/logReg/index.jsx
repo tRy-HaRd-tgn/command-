@@ -40,33 +40,31 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
     formState: { errors },
   } = useForm();
 
-  const registerSubmit = (e) => {
-    e.preventDefault();
-    async () => {
-      try {
-        const responce = await AuthService.register(
-          email,
-          name,
-          secondName,
-          thirdName,
-          place,
-          employmentStatus,
-          password,
-          password,
-          studyDirection,
-          appointment
-        );
-        setSecError("");
-        setOk(true);
-        setTimeout(() => {
-          register();
-        }, 5000);
-      } catch (e) {
-        console.log(e);
-        setSecError(e.response.data.message);
-        setOk(false);
-      }
-    };
+  const registerSubmit = async (data, event) => {
+    event.preventDefault();
+    try {
+      const responce = await AuthService.register(
+        email,
+        name,
+        secondName,
+        thirdName,
+        place,
+        employmentStatus,
+        password,
+        password,
+        studyDirection,
+        appointment
+      );
+      setSecError("");
+      setOk(true);
+      setTimeout(() => {
+        register();
+      }, 5000);
+    } catch (e) {
+      console.log(e);
+      setSecError(e.response.data.message);
+      setOk(false);
+    }
   };
 
   return (
