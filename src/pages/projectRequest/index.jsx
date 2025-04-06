@@ -118,8 +118,12 @@ export const ProjectRequestPage = (props) => {
         style={{ display: "none" }}
         onChange={(e) => {
           const file = e.target.files[0];
-          setResponseFile(file);
-          setImg(URL.createObjectURL(file));
+          try {
+            setResponseFile(file);
+            setImg(URL.createObjectURL(file));
+          } catch (e) {
+            console.log(e.responce.data.message);
+          }
         }}
       />
     </div>

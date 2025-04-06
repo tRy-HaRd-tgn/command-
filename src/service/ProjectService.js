@@ -6,7 +6,9 @@ export default class ProjectService {
     formData.append("name", name);
     formData.append("description", description);
     formData.append("tasks", JSON.stringify(array));
-    return $api.post("projects/create", formData);
+    return $api.post("projects/create", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
   }
   static async getProjects() {
     return $api.get("projects");
