@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 export const ProjectComp = ({ name, description, img, term }) => {
   return (
     <div className={styles.wrapper}>
-      <img src={img} alt="error" />
+      <img className={styles.img} src={img} alt="всё хорошо" />
       <p>{name}</p>
       <p>{term}</p>
       <p>{description}</p>
