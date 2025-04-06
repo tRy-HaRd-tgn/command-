@@ -20,7 +20,7 @@ export const ProjectRequestPage = (props) => {
       <div className={styles.projectRequestWrapper}>
         <div className={styles.projectRequest}>
           <div className={styles.secWrapper}>
-            <h2>Опиишите свой проект, заполнив основные поля</h2>
+            <h2>Опишите свой проект, заполнив основные поля</h2>
             <input
               placeholder="Название проекта"
               className={styles.input}
