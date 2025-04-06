@@ -8,20 +8,26 @@ import { hardSkills } from "./data/index";
 import { useSelector } from "react-redux";
 export const HardSkillsForm = (props) => {
   // СТРИПУХА ДВА ЛИМУЗИНА ДВЕ БУТЫЛКИ ДЖИНА
-  const [values, setValues] = useState([0, 0, 0, 0, 0, 0, 0]);
+  const [values, setValues] = useState(["", "", "", "", "", "", ""]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const temp = useSelector((state) => state.user.hardSkillInfo);
   useEffect(() => {
-    let array = [];
-    for (var key in temp) {
-      if (temp[key] === 0) {
-        array.push("");
-      } else {
-        array.push(temp[key]);
+    try {
+      if (Object.keys(temp).length === 7) {
+        let array = [];
+        for (var key in temp) {
+          if (temp[key] === 0) {
+            array.push(0);
+          } else {
+            array.push(temp[key]);
+          }
+        }
+        setValues(array);
       }
+    } catch (e) {
+      console.log(e);
     }
-    setValues(array);
   }, []);
   return (
     <div
@@ -61,7 +67,7 @@ export const HardSkillsForm = (props) => {
 
               try {
                 for (let i = 0; i < values.length; i++) {
-                  if (values[i] !== null) {
+                  if (values[i] != null) {
                     obj[keys[i]] = Number(values[i]);
                   } else {
                     obj[keys[i]] = 0;
