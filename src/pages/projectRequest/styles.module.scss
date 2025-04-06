@@ -95,7 +95,8 @@
 .button {
   border-radius: 15px;
   border: none;
-  width: 15%;
+  width: fit-content !important;
+  min-width: 15%;
   height: 100%;
   font-size: 150%;
   background-color: grey;
@@ -131,5 +132,6 @@
   align-items: center;
 }
 .msg {
+  color: red;
   text-align: center;
 }

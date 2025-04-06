@@ -99,13 +99,28 @@ export const ProjectRequestPage = (props) => {
                   } catch (e) {
                     setResult();
                     setError(e.response.data.message);
+                    console.log(e.response.data.message);
+                    if (e.response.data.message[0].includes("42")) {
+                      setError(
+                        "описание проекта должны содержать, как минимум 42 символа"
+                      );
+                    }
                   }
                 }}
               >
                 Отправить
               </button>
               {error ? <p className={styles.msg}>{error}</p> : <></>}
-              {result ? <p className={styles.msg}>{result}</p> : <></>}
+              {result ? (
+                <p
+                  style={{ color: "red", fontSize: "50px" }}
+                  className={styles.msg}
+                >
+                  {result}
+                </p>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>
