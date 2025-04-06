@@ -29,19 +29,15 @@ export const SoftSkillQuestion = ({
               className={styles.index}
               key={index}
               onClick={(e) => {
-                if (t == index) {
-                  setT(0);
-                  setter(setterState - t);
+                if (setterState > index) {
+                  setT(index);
+                  setter(index);
                   return;
                 }
-                if (index + sum <= 10 && t == 0) {
+                if (sum + (index - setterState) <= 10) {
                   setT(index);
-                  setter(setterState + index);
-                }
-
-                if (index + sum > 10 && sum == 0) {
-                  setT(10 - sum);
-                  setter(setterState + 10 - sum);
+                  setter(index);
+                  return;
                 }
               }}
             >
