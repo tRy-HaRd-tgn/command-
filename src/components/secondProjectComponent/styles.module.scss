@@ -26,6 +26,9 @@
   object-fit: cover;
   border-radius: 15px;
   border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .name {
   font-family: "Istok Web", serif;
