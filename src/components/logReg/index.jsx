@@ -177,6 +177,10 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
               {...registerS("secondName", {
                 required: "Фамилия обязательно",
                 minLength: { value: 4, message: "4 символа минимум" },
+                pattern: {
+                  value: /^[А-ЯЁ][а-яё]*$/,
+                  message: "Первая буква русская с большой",
+                },
               })}
               placeholder={"Фамилия"}
               value={secondName}
@@ -198,6 +202,10 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
               {...registerS("firstName", {
                 required: "Имя обязательно",
                 minLength: { value: 4, message: "4 символа минимум" },
+                pattern: {
+                  value: /^[А-ЯЁ][а-яё]*$/,
+                  message: "Первая буква русская с большой",
+                },
               })}
               placeholder={"Имя"}
               value={name}
@@ -219,6 +227,10 @@ export const LogReg = ({ register, state, children, modal, setModal }) => {
               {...registerS("trirdName", {
                 required: "Отчество обязательно",
                 minLength: { value: 4, message: "4 символа минимум" },
+                pattern: {
+                  value: /^[А-ЯЁ][а-яё]*$/,
+                  message: "Первая буква русская с большой",
+                },
               })}
               placeholder={"Отчество"}
               value={thirdName}
