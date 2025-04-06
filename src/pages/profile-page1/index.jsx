@@ -226,8 +226,12 @@ export const ProfilePage1 = (props) => {
                         paddingRight: "5%",
                       }}
                       className={styles.form_button}
-                      onClick={() => {
-                        const responce = AuthService.logout();
+                      onClick={async () => {
+                        try {
+                          const responce = await AuthService.logout();
+                        } catch (e) {
+                          console.log(e);
+                        }
                         console.log(responce);
                       }}
                     >

@@ -64,6 +64,7 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
         setActive={setModal}
       >
         <div className={styles.modalContent}>
+          <h2>Описание</h2>
           <span className={styles.modalContentText}>{text}</span>
         </div>
       </ModalIcon>
