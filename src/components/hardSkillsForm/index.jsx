@@ -8,7 +8,7 @@ import { hardSkills } from "./data/index";
 import { useSelector } from "react-redux";
 export const HardSkillsForm = (props) => {
   // СТРИПУХА ДВА ЛИМУЗИНА ДВЕ БУТЫЛКИ ДЖИНА
-  const [values, setValues] = useState(["", "", "", "", "", "", ""]);
+  const [values, setValues] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const temp = useSelector((state) => state.user.hardSkillInfo);
