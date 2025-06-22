@@ -4,8 +4,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { download } from "../../assets";
 import { Task } from "../../components";
+import { useNavigate } from "react-router-dom";
 import ProjectService from "../../service/ProjectService";
 export const ProjectRequestPage = (props) => {
+  const navigator = useNavigate();
   useEffect(() => {}, []);
   const [img, setImg] = useState();
   const [name, setName] = useState();
@@ -94,7 +96,7 @@ export const ProjectRequestPage = (props) => {
                     setResult("Добавлено");
                     setError();
                     setTimeout(() => {
-                      window.location.reload();
+                      navigator("/userProjects");
                     }, 5000);
                   } catch (e) {
                     setResult();
@@ -113,7 +115,7 @@ export const ProjectRequestPage = (props) => {
               {error ? <p className={styles.msg}>{error}</p> : <></>}
               {result ? (
                 <p
-                  style={{ color: "red", fontSize: "50px" }}
+                  style={{ color: "green", fontSize: "50px" }}
                   className={styles.msg}
                 >
                   {result}
