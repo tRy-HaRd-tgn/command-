@@ -22,8 +22,11 @@ export const ProjectRequestPage = (props) => {
       <div className={styles.projectRequestWrapper}>
         <div className={styles.projectRequest}>
           <div className={styles.secWrapper}>
-            <h2>Опишите свой проект, заполнив основные поля</h2>
+            <h2 style={{ width: "100%" }}>
+              Опишите свой проект, заполнив основные поля
+            </h2>
             <input
+              style={{ width: "100%" }}
               placeholder="Название проекта"
               className={styles.input}
               type="text"
@@ -31,6 +34,7 @@ export const ProjectRequestPage = (props) => {
               onChange={(e) => setName(e.target.value)}
             />
             <div
+              style={img ? { width: "fit-content" } : {}}
               className={styles.imgWrapper}
               onClick={() => {
                 let input = document.querySelector("#fileInput");
@@ -56,6 +60,7 @@ export const ProjectRequestPage = (props) => {
               {img ? <img className={styles.img} src={img} alt="" /> : <></>}
             </div>
             <textarea
+              style={{ width: "100%" }}
               className={styles.textarea}
               name=""
               placeholder="Описание проекта"
