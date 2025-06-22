@@ -108,7 +108,7 @@ export const ProfilePage1 = (props) => {
                       border: "1px solid black",
                       paddingLeft: "2%",
                     }}
-                    placeholder={"фамилия"}
+                    placeholder={"Фамилия"}
                     type="text"
                     value={secondName}
                     onChange={(e) => setSecondName(e.target.value)}
@@ -123,7 +123,7 @@ export const ProfilePage1 = (props) => {
                       border: "1px solid black",
                       paddingLeft: "2%",
                     }}
-                    placeholder={"имя"}
+                    placeholder={"Имя"}
                     type="text"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
@@ -139,7 +139,7 @@ export const ProfilePage1 = (props) => {
                       border: "1px solid black",
                       paddingLeft: "2%",
                     }}
-                    placeholder={"отчество"}
+                    placeholder={"Отчество"}
                     type="text"
                     value={thirdName}
                     onChange={(e) => setThirdName(e.target.value)}
@@ -182,7 +182,7 @@ export const ProfilePage1 = (props) => {
                       border: "1px solid black",
                       paddingLeft: "2%",
                     }}
-                    placeholder={"университет/место работы"}
+                    placeholder={"Университет/Место работы"}
                     type="text"
                     value={university}
                     onChange={(e) => setUniversity(e.target.value)}

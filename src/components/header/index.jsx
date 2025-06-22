@@ -33,7 +33,7 @@ export const Header = ({ setProjects, projects, active, setActive, mode }) => {
               router("/contact");
             }}
           >
-            <p className={styles.header__list__item__p}>Контакты</p>
+            {auth && <p className={styles.header__list__item__p}>Контакты</p>}
           </li>
           {mode == 1 ? (
             <li className={styles.header__list__item}>

@@ -87,7 +87,7 @@ export const ProfileForm = ({
             paddingLeft: "2%",
             fontSize: "135%",
           }}
-          placeholder={"должность/академическая группа"}
+          placeholder={"Должность/Академическая группа"}
           type="text"
           value={group}
           onChange={(e) => setGroup(e.target.value)}
@@ -101,7 +101,7 @@ export const ProfileForm = ({
             paddingLeft: "2%",
             fontSize: "135%",
           }}
-          placeholder={"направление обучения"}
+          placeholder={"Направление обучения"}
           type="text"
           value={direction}
           onChange={(e) => setDirection(e.target.value)}

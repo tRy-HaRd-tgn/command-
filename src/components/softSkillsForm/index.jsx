@@ -64,7 +64,7 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
         setActive={setModal}
       >
         <div className={styles.modalContent}>
-          <h2>Описание</h2>
+          <h2 className={styles.modalContentHeading}>Описание</h2>
           <span className={styles.modalContentText}>{text}</span>
         </div>
       </ModalIcon>
@@ -87,7 +87,14 @@ export const SoftSkillsForm = ({ setSoftResults, setSoftskills }) => {
             {data.map((value, index) => (
               <>
                 <h2 className={styles.h2}>
-                  {value.header} <span>{vote[index]}/ 10</span>
+                  {value.header}{" "}
+                  <span
+                    style={
+                      vote[index] != 10 ? { color: "red" } : { color: "green" }
+                    }
+                  >
+                    {vote[index]}/ 10
+                  </span>
                 </h2>
                 <TestComponent
                   setVotes={setVotes}
