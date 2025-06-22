@@ -30,7 +30,7 @@ export const ContactPage = (props) => {
         </div>
         <form className={styles.center}>
           <div className={styles.warning}>
-            Предупреждение: без устрановленного телеграма и телефона, доступ к
+            Предупреждение: без установленного телеграмма и телефона, доступ к
             функционалу проектов будет ограничен
           </div>
           <label className={styles.label} htmlFor="telegram">
